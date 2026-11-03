@@ -1,0 +1,22 @@
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #262420;
+  background-color: #f7f5f0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

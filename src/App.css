@@ -1,0 +1,44 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.site-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header a:hover {
+  text-decoration: underline;
+}
+
+.site-name {
+  font-weight: 700;
+}
+
+.intro {
+  padding: 80px 24px;
+}
+
+.intro h1 {
+  margin: 12px 0 24px;
+  font-size: clamp(3rem, 10vw, 9rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.intro-location {
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
