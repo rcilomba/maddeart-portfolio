@@ -185,3 +185,11 @@ a:focus-visible {
   outline: 3px solid ___;
   outline-offset: 5px;
 }
+
+.project-card a {
+  display: block;
+}
+
+.project-card a:hover img {
+  opacity: 0.85;
+}
