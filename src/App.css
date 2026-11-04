@@ -4,7 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
-  padding: 24px;
+  padding: 24px var(--page-padding);
 }
 
 .site-header nav {
@@ -33,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: 75svh;
-  padding: 80px 24px;
+  padding: 80px var(--page-padding);
   color: #f7f5f0;
   background-color: #262420;
 }
@@ -60,6 +60,7 @@
   font-size: clamp(3rem, 10vw, 9rem);
   line-height: 1;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .intro-location {
@@ -69,7 +70,7 @@
 }
 
 .projects {
-  padding: 64px 24px;
+  padding: 64px var(--page-padding);
   border-top: 1px solid #d8d4cc;
 }
 
@@ -94,7 +95,7 @@
 }
 
 .editions {
-  padding: 64px 24px;
+  padding: 64px var(--page-padding);
   background-color: #262420;
   color: #f7f5f0;
 }
@@ -130,7 +131,7 @@
 }
 
 .archive {
-  padding: 64px 24px;
+  padding: 64px var(--page-padding);
 }
 
 .archive h2 {
@@ -143,7 +144,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
-  padding: 32px 24px;
+  padding: 32px var(--page-padding);
   border-top: 1px solid #d8d4cc;
 }
 
@@ -182,7 +183,7 @@
 }
 
 a:focus-visible {
-  outline: 3px solid ___;
+  outline: 3px solid currentColor;
   outline-offset: 5px;
 }
 

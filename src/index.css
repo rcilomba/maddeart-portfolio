@@ -3,6 +3,7 @@
   line-height: 1.5;
   color: #262420;
   background-color: #f7f5f0;
+  --page-padding: clamp(20px, 4vw, 64px);
 }
 
 *,
