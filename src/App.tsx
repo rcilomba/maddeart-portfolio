@@ -1,4 +1,5 @@
 import './App.css';
+import ProjectCard from './components/ProjectCard';
 
 type Project = {
   title: string;
@@ -70,11 +71,13 @@ function App() {
           <p>{projects.length} selected photographic projects.</p>{' '}
           <div className='project-grid'>
             {projects.map((project) => (
-              <article className='project-card' key={project.title}>
-                <img src={project.image} alt={project.alt} loading='lazy' />
-                <h3>{project.title}</h3>
-                <p>{project.year}</p>
-              </article>
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                year={project.year}
+                image={project.image}
+                alt={project.alt}
+              />
             ))}
           </div>
         </section>
