@@ -3,6 +3,14 @@ import ProjectCard from './components/ProjectCard';
 import { projects } from './data/projects';
 
 function App() {
+  const contactEmail = 'example@mail.com';
+  const enquirySubject = encodeURIComponent(
+    'Print enquiry: Beneath the Surface',
+  );
+  const enquiryBody = encodeURIComponent(
+    'Hello Madeleine,\n\nI am interested in Beneath the Surface. Could you share the available sizes, prices and edition details?\n\nThank you!',
+  );
+
   return (
     <>
       <a className='skip-link' href='#main-content'>
@@ -60,6 +68,17 @@ function App() {
             <div>
               <h3>Beneath the Surface.</h3>
               <p>Print details coming soon.</p>
+              <p>
+                <a
+                  className='enquiry-link'
+                  href={`mailto:${contactEmail}?subject=${enquirySubject}&body=${enquiryBody}`}
+                >
+                  Enquire
+                </a>
+              </p>
+              <p>
+                Or email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              </p>
             </div>
           </article>
         </section>
