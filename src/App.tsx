@@ -17,12 +17,24 @@ function App() {
 
       <main>
         <section className='intro'>
+          <img
+            className='intro-image'
+            src='https://images.prismic.io/madeleinedalla/2f9e9cca-408f-42b3-b26f-22866c3e9116_beneath_the_surface_06.jpg?auto=compress,format&w=1920'
+            alt=''
+            fetchPriority='high'
+          />
           <p className='intro-location'>New York</p>
           <h1>Madeleine Dalla</h1>
           <p>A photographer based in New York</p>
         </section>
 
         <section id='projects' className='projects'>
+          <img
+            className='intro-image'
+            src='https://images.prismic.io/madeleinedalla/2f9e9cca-408f-42b3-b26f-22866c3e9116_beneath_the_surface_06.jpg?auto=compress,format&w=1920'
+            alt=''
+            fetchPriority='high'
+          />
           <h2>Projects</h2>
           <p>Selected photographic works by Madeleine Dalla.</p>
           <div className='project-grid'>
