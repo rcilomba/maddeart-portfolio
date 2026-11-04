@@ -65,7 +65,19 @@ function App() {
         </section>
         <section id='archive' className='archive'>
           <h2>Archive</h2>
-          <p>A selection of earlier photographic works.</p>
+          <p>A photographic index of selected projects.</p>
+          <div className='archive-grid'>
+            {projects.map((project) => (
+              <img
+                width={900}
+                height={1200}
+                key={project.title}
+                src={project.image}
+                alt={project.alt}
+                loading='lazy'
+              />
+            ))}
+          </div>
         </section>
       </main>
       <footer className='site-footer'>
