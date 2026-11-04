@@ -5,6 +5,9 @@ import { projects } from './data/projects';
 function App() {
   return (
     <>
+      <a className='skip-link' href='#main-content'>
+        Skip to content
+      </a>
       <header className='site-header'>
         <a href='/' className='site-name'>
           Madeleine Dalla
@@ -17,7 +20,7 @@ function App() {
         </nav>
       </header>
 
-      <main>
+      <main id='main-content' tabIndex={-1}>
         <section className='intro'>
           <img
             className='intro-image'
@@ -29,16 +32,9 @@ function App() {
           <h1>Madeleine Dalla</h1>
           <p>A photographer based in New York</p>
         </section>
-
         <section id='projects' className='projects'>
-          <img
-            className='intro-image'
-            src='https://images.prismic.io/madeleinedalla/2f9e9cca-408f-42b3-b26f-22866c3e9116_beneath_the_surface_06.jpg?auto=compress,format&w=1920'
-            alt=''
-            fetchPriority='high'
-          />
           <h2>Projects</h2>
-          <p>{projects.length} selected photographic projects.</p>{' '}
+          <p>{projects.length} selected photographic projects.</p>
           <div className='project-grid'>
             {projects.map((project) => (
               <ProjectCard
@@ -71,11 +67,11 @@ function App() {
           <h2>Archive</h2>
           <p>A selection of earlier photographic works.</p>
         </section>
-        <footer className='site-footer'>
-          <p className='site-name'>Madeleine Dalla</p>
-          <p>Photographer &amp; artist · New York</p>
-        </footer>
       </main>
+      <footer className='site-footer'>
+        <p className='site-name'>Madeleine Dalla</p>
+        <p>Photographer &amp; artist · New York</p>
+      </footer>
     </>
   );
 }
