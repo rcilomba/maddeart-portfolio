@@ -1,11 +1,6 @@
-type ProjectCardProps = {
-  title: string;
-  year: string;
-  image: string;
-  alt: string;
-};
+import type { Project } from '../data/projects';
 
-function ProjectCard({ title, year, image, alt }: ProjectCardProps) {
+function ProjectCard({ title, year, image, alt }: Project) {
   return (
     <article className='project-card'>
       <img src={image} alt={alt} loading='lazy' />
