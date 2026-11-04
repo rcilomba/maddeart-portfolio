@@ -1,5 +1,36 @@
 import './App.css';
 
+type Project = {
+  title: string;
+  year: string;
+  image: string;
+  alt: string;
+};
+
+const projects: Project[] = [
+  {
+    title: 'Baldrsdatter',
+    year: '2024',
+    image:
+      'https://images.prismic.io/madeleinedalla/5ac5a31d-f00b-4360-8708-46956f60caf4_baldrsdatter_01.jpg?auto=compress,format&w=900',
+    alt: 'Baldrsdatter',
+  },
+  {
+    title: 'Q',
+    year: '2024',
+    image:
+      'https://images.prismic.io/madeleinedalla/ZeeVIP_jD4D4xSOT_MadeleineDalla_Q.jpg?auto=compress,format&w=900',
+    alt: 'Q',
+  },
+  {
+    title: 'Bas x MILK',
+    year: '2023',
+    image:
+      'https://images.prismic.io/madeleinedalla/f070e39f-50a6-4cf1-a285-452aa8668240_bas_07.jpg?auto=compress,format&w=900',
+    alt: 'Bas x MILK',
+  },
+];
+
 function App() {
   return (
     <>
@@ -36,36 +67,15 @@ function App() {
             fetchPriority='high'
           />
           <h2>Projects</h2>
-          <p>Selected photographic works by Madeleine Dalla.</p>
+          <p>{projects.length} selected photographic projects.</p>{' '}
           <div className='project-grid'>
-            <article className='project-card'>
-              <img
-                src='https://images.prismic.io/madeleinedalla/5ac5a31d-f00b-4360-8708-46956f60caf4_baldrsdatter_01.jpg?auto=compress,format&w=900'
-                alt='Baldrsdatter'
-                loading='lazy'
-              />
-              <h3>Baldrsdatter</h3>
-              <p>2024</p>
-            </article>
-            <article className='project-card'>
-              <img
-                src='https://images.prismic.io/madeleinedalla/ZeeVIP_jD4D4xSOT_MadeleineDalla_Q.jpg?auto=compress,format&w=900'
-                alt='Q'
-                loading='lazy'
-              />
-              <h3>Q</h3>
-              <p>2024</p>
-            </article>
-
-            <article className='project-card'>
-              <img
-                src='https://images.prismic.io/madeleinedalla/f070e39f-50a6-4cf1-a285-452aa8668240_bas_07.jpg?auto=compress,format&w=900'
-                alt='Bas x MILK.'
-                loading='lazy'
-              />
-              <h3>Bas x MILK.</h3>
-              <p>2023</p>
-            </article>
+            {projects.map((project) => (
+              <article className='project-card' key={project.title}>
+                <img src={project.image} alt={project.alt} loading='lazy' />
+                <h3>{project.title}</h3>
+                <p>{project.year}</p>
+              </article>
+            ))}
           </div>
         </section>
         <section id='editions' className='editions'>

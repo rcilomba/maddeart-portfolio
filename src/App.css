@@ -150,3 +150,38 @@
 .site-footer p {
   margin: 0;
 }
+
+@media (min-width: 1000px) {
+  .project-grid {
+    max-width: none;
+    grid-template-columns: 5fr 3fr 4fr;
+    align-items: start;
+  }
+
+  .project-card:nth-child(2) {
+    margin-top: 120px;
+  }
+
+  .project-card:nth-child(3) {
+    margin-top: 40px;
+  }
+}
+
+.project-card h3 {
+  margin: 0 0 8px;
+  padding-top: 12px;
+  border-top: 1px solid #d8d4cc;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+a:focus-visible {
+  outline: 3px solid ___;
+  outline-offset: 5px;
+}
