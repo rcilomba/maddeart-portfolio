@@ -42,3 +42,25 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
+
+.projects {
+  padding: 64px 24px;
+  border-top: 1px solid #d8d4cc;
+}
+
+.projects h2 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.project-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  max-width: 1200px;
+}
