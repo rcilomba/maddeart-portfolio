@@ -1,36 +1,6 @@
 import './App.css';
 import ProjectCard from './components/ProjectCard';
-
-type Project = {
-  title: string;
-  year: string;
-  image: string;
-  alt: string;
-};
-
-const projects: Project[] = [
-  {
-    title: 'Baldrsdatter',
-    year: '2024',
-    image:
-      'https://images.prismic.io/madeleinedalla/5ac5a31d-f00b-4360-8708-46956f60caf4_baldrsdatter_01.jpg?auto=compress,format&w=900',
-    alt: 'Baldrsdatter',
-  },
-  {
-    title: 'Q',
-    year: '2024',
-    image:
-      'https://images.prismic.io/madeleinedalla/ZeeVIP_jD4D4xSOT_MadeleineDalla_Q.jpg?auto=compress,format&w=900',
-    alt: 'Q',
-  },
-  {
-    title: 'Bas x MILK',
-    year: '2023',
-    image:
-      'https://images.prismic.io/madeleinedalla/f070e39f-50a6-4cf1-a285-452aa8668240_bas_07.jpg?auto=compress,format&w=900',
-    alt: 'Bas x MILK',
-  },
-];
+import { projects } from './data/projects';
 
 function App() {
   return (
