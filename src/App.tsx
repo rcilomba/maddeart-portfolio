@@ -27,8 +27,8 @@ function App() {
           <a href='#archive'>Archive</a>
           <a href='#editions'>Limited Editions</a>
         </nav>
-      </header>0
-
+      </header>
+      0
       <main id='main-content' tabIndex={-1}>
         <section className='intro'>
           <img
@@ -60,11 +60,7 @@ function App() {
           <h2>Limited Editions</h2>
           <p>Selected photographs available as signed prints.</p>
           <article className='edition-card'>
-            <img
-              src='https://images.prismic.io/madeleinedalla/2f9e9cca-408f-42b3-b26f-22866c3e9116_beneath_the_surface_06.jpg?auto=compress,format&w=900'
-              alt='Beneath the Surface.'
-              loading='lazy'
-            />
+            <img src={edition.image} alt={edition.alt} loading='lazy' />
 
             <div>
               <h3>{printTitle}</h3>
