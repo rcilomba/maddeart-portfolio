@@ -1,14 +1,15 @@
 import './App.css';
 import ProjectCard from './components/ProjectCard';
 import { projects } from './data/projects';
+import { edition } from './data/edition';
 
 function App() {
-  const contactEmail = 'example@mail.com';
-  const enquirySubject = encodeURIComponent(
-    'Print enquiry: Beneath the Surface',
-  );
+  const contactEmail = edition.contactEmail;
+  const printTitle = edition.title;
+  const enquirySubject = encodeURIComponent(`Print enquiry: ${printTitle}`);
+
   const enquiryBody = encodeURIComponent(
-    'Hello Madeleine,\n\nI am interested in Beneath the Surface. Could you share the available sizes, prices and edition details?\n\nThank you!',
+    `Hello Madeleine,\n\nI am interested in ${printTitle}. Could you share the available sizes, prices and edition details?\n\nThank you!`,
   );
 
   return (
@@ -26,7 +27,7 @@ function App() {
           <a href='#archive'>Archive</a>
           <a href='#editions'>Limited Editions</a>
         </nav>
-      </header>
+      </header>0
 
       <main id='main-content' tabIndex={-1}>
         <section className='intro'>
@@ -66,7 +67,7 @@ function App() {
             />
 
             <div>
-              <h3>Beneath the Surface.</h3>
+              <h3>{printTitle}</h3>
               <p>Print details coming soon.</p>
               <p>
                 <a
@@ -75,9 +76,6 @@ function App() {
                 >
                   Enquire
                 </a>
-              </p>
-              <p>
-                Or email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
               </p>
             </div>
           </article>
