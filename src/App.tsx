@@ -2,6 +2,7 @@ import './App.css';
 import ProjectCard from './components/ProjectCard';
 import { projects } from './data/projects';
 import { edition } from './data/edition';
+import EditionCard from './components/EditionCard';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -12,6 +13,7 @@ function App() {
     `Hello Madeleine,\n\nI am interested in ${printTitle}. Could you share the available sizes, prices and edition details?\n\nThank you!`,
   );
 
+  const enquiryUrl = `mailto:${contactEmail}?subject=${enquirySubject}&body=${enquiryBody}`;
   return (
     <>
       <a className='skip-link' href='#main-content'>
@@ -59,22 +61,12 @@ function App() {
         <section id='editions' className='editions'>
           <h2>Limited Editions</h2>
           <p>Selected photographs available as signed prints.</p>
-          <article className='edition-card'>
-            <img src={edition.image} alt={edition.alt} loading='lazy' />
-
-            <div>
-              <h3>{printTitle}</h3>
-              <p>Print details coming soon.</p>
-              <p>
-                <a
-                  className='enquiry-link'
-                  href={`mailto:${contactEmail}?subject=${enquirySubject}&body=${enquiryBody}`}
-                >
-                  Enquire
-                </a>
-              </p>
-            </div>
-          </article>
+          <EditionCard
+            title={edition.title}
+            image={edition.image}
+            alt={edition.alt}
+            enquiryUrl={enquiryUrl}
+          />
         </section>
         <section id='archive' className='archive'>
           <h2>Archive</h2>
