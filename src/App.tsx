@@ -66,6 +66,7 @@ function App() {
             image={edition.image}
             alt={edition.alt}
             enquiryUrl={enquiryUrl}
+            enquiriesEnabled={edition.enquiriesEnabled}
           />
         </section>
         <section id='archive' className='archive'>
