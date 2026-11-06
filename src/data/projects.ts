@@ -25,6 +25,20 @@ export const projects: Project[] = [
     alt: 'Person in profile wearing white-framed sunglasses and a white fur collar against a rust-red background',
     slug: 'baldrsdatter',
     featured: true,
+    images: [
+      {
+        src: 'https://images.prismic.io/madeleinedalla/abc07960-4a14-4138-9fd9-04cf3855727f_baldrsdatter_02.jpg?auto=compress,format&rect=0,0,1999,2452&w=600&h=736',
+        alt: 'Person seated in a white coat and white-framed sunglasses against an orange background',
+      },
+      {
+        src: 'https://images.prismic.io/madeleinedalla/8b6e92f8-be60-496d-9aa3-7da62a4c10f5_baldrsdatter_04.jpg?auto=compress,format&rect=0,0,2000,2450&w=600&h=735',
+        alt: 'Person in a white coat and white-framed sunglasses reaching both gloved hands toward the camera against an orange background',
+      },
+      {
+        src: 'https://images.prismic.io/madeleinedalla/03d9600c-3919-414c-810a-9099f55fcd16_baldrsdatter_08.jpg?auto=compress,format&rect=0,0,2000,2452&w=1200&h=1471',
+        alt: 'Person standing very close',
+      },
+    ],
   },
   {
     title: 'Q',

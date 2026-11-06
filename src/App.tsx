@@ -20,22 +20,6 @@ function App() {
   const imageDialogRef = useRef<HTMLDialogElement>(null);
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
-  function showNextProject() {
-    const nextIndex = (selectedProjectIndex + 1) % projects.length;
-    setSelectedProject(projects[nextIndex]);
-  }
-
-  function showPreviousProject() {
-    const previousIndex =
-      (selectedProjectIndex - 1 + projects.length) % projects.length;
-
-    setSelectedProject(projects[previousIndex]);
-  }
-
-  const selectedProjectIndex = projects.findIndex(
-    (project) => project.slug === selectedProject.slug,
-  );
-
   const featuredProjects = projects.filter((project) => project.featured);
 
   return (
@@ -106,7 +90,7 @@ function App() {
           <div className='archive-grid'>
             {projects.map((project) => (
               <button
-                key={project.title}
+                key={project.slug}
                 type='button'
                 className='archive-image-button'
                 aria-label={`View ${project.title}`}
@@ -138,14 +122,7 @@ function App() {
           </div>
         </section>
       </main>
-      <ImageDialog
-        dialogRef={imageDialogRef}
-        project={selectedProject}
-        position={selectedProjectIndex + 1}
-        total={projects.length}
-        onPrevious={showPreviousProject}
-        onNext={showNextProject}
-      />
+      <ImageDialog dialogRef={imageDialogRef} project={selectedProject} />
       <footer className='site-footer'>
         <p className='site-name'>Madeleine Dalla</p>
         <p>Photographer &amp; artist · New York</p>
