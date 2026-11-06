@@ -20,6 +20,15 @@ function ImageDialog({
 }: ImageDialogProps) {
   return (
     <dialog
+      onKeyDown={(event) => {
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          onNext();
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          onPrevious();
+        }
+      }}
       ref={dialogRef}
       className='image-dialog'
       aria-labelledby='image-dialog-title'
