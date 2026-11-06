@@ -30,7 +30,7 @@ function App() {
           <a href='#editions'>Limited Editions</a>
         </nav>
       </header>
-      0
+
       <main id='main-content' tabIndex={-1}>
         <section className='intro'>
           <img
@@ -67,6 +67,7 @@ function App() {
             alt={edition.alt}
             enquiryUrl={enquiryUrl}
             enquiriesEnabled={edition.enquiriesEnabled}
+            enquiryNotice={edition.enquiryNotice}
           />
         </section>
         <section id='archive' className='archive'>

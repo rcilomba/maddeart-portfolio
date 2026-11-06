@@ -4,6 +4,7 @@ type EditionCardProps = {
   alt: string;
   enquiryUrl: string;
   enquiriesEnabled: boolean;
+  enquiryNotice: string;
 };
 
 function EditionCard({
@@ -12,6 +13,7 @@ function EditionCard({
   alt,
   enquiryUrl,
   enquiriesEnabled,
+  enquiryNotice,
 }: EditionCardProps) {
   return (
     <article className='edition-card'>
@@ -26,7 +28,7 @@ function EditionCard({
             </a>
           </p>
         ) : (
-          <p>Enquiries coming soon.</p>
+          <p>{enquiryNotice}</p>
         )}
       </div>
     </article>
