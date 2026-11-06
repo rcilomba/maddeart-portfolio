@@ -19,6 +19,26 @@ function App() {
   const imageDialogRef = useRef<HTMLDialogElement>(null);
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
+  function showNextProject() {
+    const currentIndex = projects.findIndex(
+      (project) => project.title === selectedProject.title,
+    );
+
+    const nextIndex = (currentIndex + 1) % projects.length;
+    setSelectedProject(projects[nextIndex]);
+  }
+
+  function showPreviousProject() {
+    const currentIndex = projects.findIndex(
+      (project) => project.title === selectedProject.title,
+    );
+
+    const previousIndex =
+      (currentIndex - 1 + projects.length) % projects.length;
+
+    setSelectedProject(projects[previousIndex]);
+  }
+
   return (
     <>
       <a className='skip-link' href='#main-content'>
@@ -109,8 +129,16 @@ function App() {
         <button type='button' onClick={() => imageDialogRef.current?.close()}>
           Close
         </button>
-        <h2 id='image-dialog-title'>{selectedProject.title}</h2>
-        <img src={selectedProject.image} alt={selectedProject.alt} />
+        <div className='dialog-navigation'>
+          <h2 id='image-dialog-title'>{selectedProject.title}</h2>
+          <img src={selectedProject.image} alt={selectedProject.alt} />
+          <button type='button' onClick={showPreviousProject}>
+            Previous project
+          </button>
+          <button type='button' onClick={showNextProject}>
+            Next project
+          </button>
+        </div>
       </dialog>
       <footer className='site-footer'>
         <p className='site-name'>Madeleine Dalla</p>

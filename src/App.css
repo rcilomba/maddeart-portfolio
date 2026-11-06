@@ -305,3 +305,11 @@ a:focus-visible {
   outline: 3px solid currentColor;
   outline-offset: 5px;
 }
+
+.dialog-navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
