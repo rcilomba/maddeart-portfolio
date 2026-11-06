@@ -3,6 +3,8 @@ import ProjectCard from './components/ProjectCard';
 import { projects } from './data/projects';
 import { edition } from './data/edition';
 import EditionCard from './components/EditionCard';
+import { useRef, useState } from 'react';
+import type { Project } from './data/projects';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -14,6 +16,9 @@ function App() {
   );
 
   const enquiryUrl = `mailto:${contactEmail}?subject=${enquirySubject}&body=${enquiryBody}`;
+  const imageDialogRef = useRef<HTMLDialogElement>(null);
+  const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
+
   return (
     <>
       <a className='skip-link' href='#main-content'>
@@ -44,7 +49,7 @@ function App() {
           <p>A photographer based in New York</p>
         </section>
         <section id='projects' className='projects'>
-          <h2>Projects</h2>
+          <h2>Projects</h2>{' '}
           <p>{projects.length} selected photographic projects.</p>
           <div className='project-grid'>
             {projects.map((project) => (
@@ -54,6 +59,10 @@ function App() {
                 year={project.year}
                 image={project.image}
                 alt={project.alt}
+                onOpen={() => {
+                  setSelectedProject(project);
+                  imageDialogRef.current?.showModal();
+                }}
               />
             ))}
           </div>
@@ -87,6 +96,17 @@ function App() {
           </div>
         </section>
       </main>
+      <dialog
+        ref={imageDialogRef}
+        className='image-dialog'
+        aria-labelledby='image-dialog-title'
+      >
+        <button type='button' onClick={() => imageDialogRef.current?.close()}>
+          Close
+        </button>
+        <h2 id='image-dialog-title'>{selectedProject.title}</h2>
+        <img src={selectedProject.image} alt={selectedProject.alt} />
+      </dialog>
       <footer className='site-footer'>
         <p className='site-name'>Madeleine Dalla</p>
         <p>Photographer &amp; artist · New York</p>

@@ -1,16 +1,20 @@
 import type { Project } from '../data/projects';
 
-function ProjectCard({ title, year, image, alt }: Project) {
+type ProjectCardProps = Project & {
+  onOpen: () => void;
+};
+
+function ProjectCard({ title, year, image, alt, onOpen }: ProjectCardProps) {
   return (
     <article className='project-card'>
-      <a
-        href={image}
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label={`View ${title} image (opens in a new tab)`}
+      <button
+        type='button'
+        className='project-image-button'
+        onClick={onOpen}
+        aria-label={`View ${title}`}
       >
         <img src={image} alt={alt} loading='lazy' />
-      </a>
+      </button>
       <h3>{title}</h3>
       <p>{year}</p>
     </article>

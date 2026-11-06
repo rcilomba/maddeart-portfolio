@@ -242,3 +242,55 @@ a:focus-visible {
   background-color: #f7f5f0;
   color: #262420;
 }
+
+.project-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.project-image-button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 5px;
+}
+
+.image-dialog {
+  width: min(960px, 92vw);
+  max-height: 90svh;
+  padding: 24px;
+  border: 0;
+  background: #f7f5f0;
+  color: #262420;
+  overflow-y: auto;
+}
+
+.image-dialog::backdrop {
+  background: rgb(0 0 0 / ___);
+}
+
+.image-dialog h2 {
+  margin: 16px 0;
+}
+
+.image-dialog img {
+  width: 100%;
+  max-height: 65svh;
+  object-fit: contain;
+}
+
+.image-dialog button {
+  padding: 8px 16px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.image-dialog button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
