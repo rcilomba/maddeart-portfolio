@@ -5,6 +5,7 @@ import { edition } from './data/edition';
 import EditionCard from './components/EditionCard';
 import { useRef, useState } from 'react';
 import type { Project } from './data/projects';
+import ImageDialog from './components/ImageDialog';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -120,25 +121,14 @@ function App() {
           </div>
         </section>
       </main>
-      <dialog
-        ref={imageDialogRef}
-        className='image-dialog'
-        aria-labelledby='image-dialog-title'
-      >
-        <button type='button' onClick={() => imageDialogRef.current?.close()}>
-          Close
-        </button>
-        <div className='dialog-navigation'>
-          <h2 id='image-dialog-title'>{selectedProject.title}</h2>
-          <img src={selectedProject.image} alt={selectedProject.alt} />
-          <button type='button' onClick={showPreviousProject}>
-            Previous project
-          </button>
-          <button type='button' onClick={showNextProject}>
-            Next project
-          </button>
-        </div>
-      </dialog>
+      <ImageDialog
+        dialogRef={imageDialogRef}
+        project={selectedProject}
+        position={selectedProjectIndex + 1}
+        total={projects.length}
+        onPrevious={showPreviousProject}
+        onNext={showNextProject}
+      />
       <footer className='site-footer'>
         <p className='site-name'>Madeleine Dalla</p>
         <p>Photographer &amp; artist · New York</p>
