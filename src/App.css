@@ -284,6 +284,7 @@ a:focus-visible {
   color: inherit;
   font: inherit;
   cursor: pointer;
+  min-height: 44px;
 }
 
 .image-dialog button:focus-visible {

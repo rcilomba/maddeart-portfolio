@@ -42,8 +42,8 @@ function ImageDialog({
       </button>
 
       <h2 id='image-dialog-title'>{project.title}</h2>
-      <p aria-live='polite'>
-        {position} / {total}
+      <p aria-live='polite' aria-atomic='true'>
+        {project.title} — {position} / {total}
       </p>
       <img src={project.image} alt={project.alt} />
 
