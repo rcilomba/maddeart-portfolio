@@ -20,24 +20,20 @@ function App() {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
   function showNextProject() {
-    const currentIndex = projects.findIndex(
-      (project) => project.title === selectedProject.title,
-    );
-
-    const nextIndex = (currentIndex + 1) % projects.length;
+    const nextIndex = (selectedProjectIndex + 1) % projects.length;
     setSelectedProject(projects[nextIndex]);
   }
 
   function showPreviousProject() {
-    const currentIndex = projects.findIndex(
-      (project) => project.title === selectedProject.title,
-    );
-
     const previousIndex =
-      (currentIndex - 1 + projects.length) % projects.length;
+      (selectedProjectIndex - 1 + projects.length) % projects.length;
 
     setSelectedProject(projects[previousIndex]);
   }
+
+  const selectedProjectIndex = projects.findIndex(
+    (project) => project.title === selectedProject.title,
+  );
 
   return (
     <>
@@ -69,7 +65,10 @@ function App() {
           <p>A photographer based in New York</p>
         </section>
         <section id='projects' className='projects'>
-          <h2>Projects</h2>{' '}
+          <h2>Projects</h2>
+          <p aria-live='polite'>
+            {selectedProjectIndex + 1} / {projects.length}
+          </p>
           <p>{projects.length} selected photographic projects.</p>
           <div className='project-grid'>
             {projects.map((project) => (
