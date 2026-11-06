@@ -187,11 +187,7 @@ a:focus-visible {
   outline-offset: 5px;
 }
 
-.project-card a {
-  display: block;
-}
-
-.project-card a:hover img {
+.project-image-button:hover img {
   opacity: 0.85;
 }
 
@@ -293,4 +289,19 @@ a:focus-visible {
 .image-dialog button:focus-visible {
   outline: 3px solid currentColor;
   outline-offset: 4px;
+}
+
+.archive-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.archive-image-button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 5px;
 }

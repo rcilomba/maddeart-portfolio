@@ -12,6 +12,7 @@ function ProjectCard({ title, year, image, alt, onOpen }: ProjectCardProps) {
         className='project-image-button'
         onClick={onOpen}
         aria-label={`View ${title}`}
+        aria-haspopup='dialog'
       >
         <img src={image} alt={alt} loading='lazy' />
       </button>

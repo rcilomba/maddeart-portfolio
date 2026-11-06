@@ -84,14 +84,19 @@ function App() {
           <p>A photographic index of selected projects.</p>
           <div className='archive-grid'>
             {projects.map((project) => (
-              <img
-                width={900}
-                height={1200}
+              <button
                 key={project.title}
-                src={project.image}
-                alt={project.alt}
-                loading='lazy'
-              />
+                type='button'
+                className='archive-image-button'
+                aria-label={`View ${project.title}`}
+                aria-haspopup='dialog'
+                onClick={() => {
+                  setSelectedProject(project);
+                  imageDialogRef.current?.showModal();
+                }}
+              >
+                <img src={project.image} alt={project.alt} loading='lazy' />
+              </button>
             ))}
           </div>
         </section>
