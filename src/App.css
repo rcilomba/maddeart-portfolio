@@ -314,3 +314,22 @@ a:focus-visible {
   gap: 12px;
   margin-top: 20px;
 }
+
+.all-projects {
+  padding: 64px var(--page-padding);
+  border-top: 1px solid #d8d4cc;
+}
+
+.all-projects h2 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.all-projects .project-grid {
+  max-width: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.all-projects .project-card {
+  margin-top: 0;
+}

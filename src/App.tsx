@@ -33,8 +33,10 @@ function App() {
   }
 
   const selectedProjectIndex = projects.findIndex(
-    (project) => project.title === selectedProject.title,
+    (project) => project.slug === selectedProject.slug,
   );
+
+  const featuredProjects = projects.filter((project) => project.featured);
 
   return (
     <>
@@ -67,18 +69,16 @@ function App() {
         </section>
         <section id='projects' className='projects'>
           <h2>Projects</h2>
-          <p aria-live='polite'>
-            {selectedProjectIndex + 1} / {projects.length}
-          </p>
-          <p>{projects.length} selected photographic projects.</p>
+          <p>{featuredProjects.length} selected photographic projects.</p>
           <div className='project-grid'>
-            {projects.map((project) => (
+            {featuredProjects.map((project) => (
               <ProjectCard
-                key={project.title}
+                key={project.slug}
                 title={project.title}
                 year={project.year}
                 image={project.image}
                 alt={project.alt}
+                slug={project.slug}
                 onOpen={() => {
                   setSelectedProject(project);
                   imageDialogRef.current?.showModal();
@@ -102,6 +102,7 @@ function App() {
         <section id='archive' className='archive'>
           <h2>Archive</h2>
           <p>A photographic index of selected projects.</p>
+          <a href='#all-projects'>View all projects</a>
           <div className='archive-grid'>
             {projects.map((project) => (
               <button
@@ -117,6 +118,22 @@ function App() {
               >
                 <img src={project.image} alt={project.alt} loading='lazy' />
               </button>
+            ))}
+          </div>
+        </section>
+        <section id='all-projects' className='all-projects'>
+          <h2>All Projects</h2>
+          <p>{projects.length} photographic projects.</p>
+          <div className='project-grid'>
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                {...project}
+                onOpen={() => {
+                  setSelectedProject(project);
+                  imageDialogRef.current?.showModal();
+                }}
+              />
             ))}
           </div>
         </section>
