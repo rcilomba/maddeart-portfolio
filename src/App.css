@@ -333,3 +333,27 @@ a:focus-visible {
 .all-projects .project-card {
   margin-top: 0;
 }
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px;
+  margin-top: 16px;
+}
+
+.gallery-thumbnails button {
+  flex: 0 0 72px;
+  padding: 3px;
+  border: 2px solid transparent;
+}
+
+.gallery-thumbnails button[aria-pressed='true'] {
+  border-color: currentColor;
+}
+
+.gallery-thumbnails img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+}

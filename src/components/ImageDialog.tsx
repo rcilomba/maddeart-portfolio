@@ -54,17 +54,40 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
       {project.description && <p>{project.description}</p>}
       {project.subtitle && <p>{project.subtitle}</p>}
       <p aria-live='polite' aria-atomic='true'>
-        {project.title} — {imageIndex + 1} / {galleryImages.length}
+        {galleryImages.length > 1
+          ? `${project.title} — ${imageIndex + 1} / ${galleryImages.length}`
+          : project.title}
       </p>
       <img src={currentImage.src} alt={currentImage.alt} />
-      <div className='dialog-navigation'>
-        <button type='button' onClick={showPreviousImage}>
-          Previous image
-        </button>
-        <button type='button' onClick={showNextImage}>
-          Next image
-        </button>
-      </div>
+      {galleryImages.length > 1 && (
+        <div
+          className='gallery-thumbnails'
+          role='group'
+          aria-label='Choose image'
+        >
+          {galleryImages.map((image, index) => (
+            <button
+              key={image.src}
+              type='button'
+              aria-label={`Show image ${index + 1}`}
+              aria-pressed={index === imageIndex}
+              onClick={() => setImageIndex(index)}
+            >
+              <img src={image.src} alt='' loading='lazy' />
+            </button>
+          ))}
+        </div>
+      )}
+      {galleryImages.length > 1 && (
+        <div className='dialog-navigation'>
+          <button type='button' onClick={showPreviousImage}>
+            Previous image
+          </button>
+          <button type='button' onClick={showNextImage}>
+            Next image
+          </button>
+        </div>
+      )}
     </dialog>
   );
 }
