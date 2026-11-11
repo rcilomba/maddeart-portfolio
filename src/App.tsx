@@ -6,6 +6,7 @@ import EditionCard from './components/EditionCard';
 import { useRef, useState } from 'react';
 import type { Project } from './data/projects';
 import ImageDialog from './components/ImageDialog';
+import AllProjects from './components/AllProjects';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -105,22 +106,12 @@ function App() {
             ))}
           </div>
         </section>
-        <section id='all-projects' className='all-projects'>
-          <h2>All Projects</h2>
-          <p>{projects.length} photographic projects.</p>
-          <div className='project-grid'>
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.slug}
-                {...project}
-                onOpen={() => {
-                  setSelectedProject(project);
-                  imageDialogRef.current?.showModal();
-                }}
-              />
-            ))}
-          </div>
-        </section>
+        <AllProjects
+          onOpenProject={(project) => {
+            setSelectedProject(project);
+            imageDialogRef.current?.showModal();
+          }}
+        />
       </main>
       <ImageDialog dialogRef={imageDialogRef} project={selectedProject} />
       <footer className='site-footer'>
