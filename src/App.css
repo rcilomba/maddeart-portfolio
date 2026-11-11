@@ -320,7 +320,7 @@ a:focus-visible {
   border-top: 1px solid #d8d4cc;
 }
 
-.all-projects h2 {
+.all-projects h1 {
   margin: 0 0 16px;
   font-size: clamp(2rem, 5vw, 4rem);
 }
