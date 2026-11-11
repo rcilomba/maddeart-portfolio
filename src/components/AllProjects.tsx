@@ -9,7 +9,7 @@ type AllProjectsProps = {
 function AllProjects({ onOpenProject }: AllProjectsProps) {
   return (
     <section id='all-projects' className='all-projects'>
-      <h1>All Projects</h1>
+      <h2>All Projects</h2>
       <p>{projects.length} photographic projects.</p>
 
       <div className='project-grid'>
