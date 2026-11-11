@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import type { Project } from './data/projects';
 import ImageDialog from './components/ImageDialog';
 import AllProjects from './components/AllProjects';
+import { Link, Route, Routes } from 'react-router';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -34,13 +35,15 @@ function App() {
         </a>
 
         <nav aria-label='Main navigation'>
-          <a href='#projects'>Projects</a>
-          <a href='#archive'>Archive</a>
-          <a href='#editions'>Limited Editions</a>
+          <Link to='/projects'>Projects</Link>
+          <a href='/#archive'>Archive</a>
+          <a href='/#editions'>Limited Editions</a>
         </nav>
       </header>
 
       <main id='main-content' tabIndex={-1}>
+        <Routes>
+          <Route path='/' element={<>
         <section className='intro'>
           <img
             className='intro-image'
@@ -87,7 +90,7 @@ function App() {
         <section id='archive' className='archive'>
           <h2>Archive</h2>
           <p>A photographic index of selected projects.</p>
-          <a href='#all-projects'>View all projects</a>
+          <Link to='/projects'>View all projects</Link>
           <div className='archive-grid'>
             {projects.map((project) => (
               <button
@@ -106,12 +109,17 @@ function App() {
             ))}
           </div>
         </section>
-        <AllProjects
-          onOpenProject={(project) => {
-            setSelectedProject(project);
-            imageDialogRef.current?.showModal();
-          }}
-        />
+          </>} />
+          <Route path='/projects' element={
+            <AllProjects
+              onOpenProject={(project) => {
+                setSelectedProject(project);
+                imageDialogRef.current?.showModal();
+              }}
+            />
+          } />
+          <Route path='*' element={<p>Page not found.</p>} />
+        </Routes>
       </main>
       <ImageDialog dialogRef={imageDialogRef} project={selectedProject} />
       <footer className='site-footer'>
