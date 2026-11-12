@@ -275,7 +275,7 @@ a:focus-visible {
 }
 
 .image-dialog::backdrop {
-  background: rgb(0 0 0 / ___);
+  background: rgb(0 0 0 / 70%);
 }
 
 .image-dialog h2 {

@@ -1,9 +1,21 @@
 import { Link, useParams } from 'react-router';
 import { projects } from '../data/projects';
+import { useEffect } from 'react';
 
 function ProjectPage() {
   const { slug } = useParams();
   const project = projects.find((item) => item.slug === slug);
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = project
+      ? `${project.title} | Madeleine Dalla`
+      : 'Project not found | Madeleine Dalla';
+
+    return () => {
+      document.title = previousTitle;
+    };
+  }, [project]);
 
   if (!project) {
     return (
@@ -32,8 +44,14 @@ function ProjectPage() {
       {project.subtitle && <p>{project.subtitle}</p>}
       <p>{project.year}</p>
       <div className='project-page-gallery'>
-        {galleryImages.map((image) => (
-          <img key={image.src} src={image.src} alt={image.alt} loading='lazy' />
+        {galleryImages.map((image, index) => (
+          <img
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchPriority={index === 0 ? 'high' : undefined}
+          />
         ))}
       </div>
       <nav aria-label='Project navigation'>
