@@ -1,6 +1,6 @@
 # MaddeArt – projektkontext
 
-Senast granskad: 2026-11-11
+Senast granskad: 2026-11-12
 
 ## Syfte
 
@@ -12,7 +12,7 @@ All ny projektkod hör hemma i `maddeart-page`. Ändra inte referensprojektet.
 
 ## Nuvarande kodläge
 
-Koden från commit `3408a54` återställdes med commit `543095f` efter ett tidigare försök med React Router (`0dbf61d`). Det försöket finns även kvar på backupgrenen `backup-react-router-projects-0dbf61d`; inga commits raderades. Därefter har en ny, enklare routing införts för `/` och `/projects`.
+Koden från commit `3408a54` återställdes med commit `543095f` efter ett tidigare försök med React Router (`0dbf61d`). Det försöket finns även kvar på backupgrenen `backup-react-router-projects-0dbf61d`; inga commits raderades. Därefter har routes införts för `/`, `/projects` och `/project/:slug`.
 
 Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; denna status kan ha ändrats.
 
@@ -32,21 +32,23 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 
 - En startsida på `/` med introduktion, fem utvalda projekt, Limited Editions och arkivförhandsvisning.
 - En separat `/projects`-sida med alla projekt och en egen huvudrubrik. Menylänken Projects och länken View all projects leder dit. Archive och Limited Editions leder till startsidans sektioner.
+- Varje projekttitel leder till en egen sida på `/project/:slug`, med omslagsbild, eventuella extra bilder och länkar till föregående/nästa projekt. Okänd slug visar ett enkelt felmeddelande. Projektbildernas knappar öppnar fortfarande bilddialogen. Projektsidan för Baldrsdatter har testats lokalt i webbläsaren.
 - Projektdata för 14 projekt finns i `src/data/projects.ts`. Fältet `featured` markerar de fem projekt som visas i den utvalda sektionen.
 - `ProjectCard` och `AllProjects` återanvänder samma projektdata.
 - `ImageDialog` öppnar ett projekt och bläddrar mellan dess bilder med knappar, piltangenter och miniatyrer. Bildräknaren visas när projektet har flera bilder.
 - Baldrsdatter har tre bilder i sin `images`-lista. Övriga projekt visar för närvarande omslagsbilden i dialogen.
 - Skip-länk, synliga fokusmarkeringar, bildbeskrivningar och tangentbordsstöd har lagts till.
 - `EditionCard` visar konsttrycket Beneath the Surface. Förfrågningar är avstängda med `enquiriesEnabled: false` i `src/data/edition.ts`. Mejladressen där är en testadress.
-- Produktionsbyggnad och lintkontroll passerade efter routingen. En direkt HTTP-begäran till `/projects` på Vites lokala förhandsvisning gav 200 och appens HTML. `dist/_redirects` innehåller Netlify-regeln; direktladdning på Netlify är ännu inte verifierad.
+- Produktionsbyggnad och lintkontroll passerade efter tillägget av projektsidor. En direkt HTTP-begäran till `/projects` på Vites lokala förhandsvisning gav 200 och appens HTML. `dist/_redirects` innehåller Netlify-regeln; direktladdning av projektsidorna på Netlify är ännu inte verifierad.
 
 ## Viktiga filer
 
-- `src/App.tsx`: routes för `/` och `/projects`, projektval och gemensam bilddialog.
+- `src/App.tsx`: routes för `/`, `/projects` och `/project/:slug`, projektval och gemensam bilddialog.
 - `src/data/projects.ts`: projekt, omslagsbilder, alt-texter och galleribilder.
 - `src/data/edition.ts`: data och förfrågningsstatus för konsttrycket.
 - `src/components/ProjectCard.tsx`: projektkort.
 - `src/components/AllProjects.tsx`: översikt över alla projekt.
+- `src/components/ProjectPage.tsx`: enskilda projekt, bildgalleri och föregående/nästa-navigation.
 - `src/components/ImageDialog.tsx`: bildvisare och gallerinavigation.
 - `src/components/EditionCard.tsx`: konsttryck.
 - `src/App.css` och `src/index.css`: komponentstilar och globala stilar.
@@ -56,7 +58,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 ## Viktiga beslut
 
 - Startsidan visar fem utvalda projekt. Alla 14 visas på den separata översikten `/projects`. Samma bilddialog används på båda sidorna.
-- Varje projekt ska kunna innehålla flera fotografier och på sikt få en tydlig, delbar projektsida. De flesta gallerierna är ännu inte kompletta.
+- Projekt har delbara adresser och stöd för flera fotografier. De flesta gallerierna innehåller ännu bara omslagsbilden; fler bilder och granskade alt-texter behövs.
 - Prismic är förstahandsval för CMS om Madeleines befintliga konto, innehållsmodell, arbetsflöde och kostnader fungerar för den nya sidan. Sanity är ett alternativ, inget beslutat byte. Prismic-bildadresser bevisar inte ensamma hur hela webbplatsen administreras.
 - Netlify används för förhandsversionen. GoDaddy kan senare användas för att peka Madeleines domän mot den nya sidan. Dokumentera befintliga DNS-poster innan någon domänändring, särskilt poster för e-post. Den gamla sidan ska kunna återställas genom att återställa tidigare DNS-värden.
 - Högupplösta original och tryckfiler ska hållas privata. Fotografier som visas i en webbläsare kan inte skyddas helt mot nedladdning.
@@ -66,7 +68,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 ## Kvar att göra
 
 1. Publicera routingändringarna på Netlify och kontrollera att `/projects` fungerar vid direktladdning och uppdatering samt att navigering och bilddialog fungerar på båda sidorna.
-2. Bygg tydliga, delbara projektsidor och fyll på varje projekts bildlista i rätt ordning med granskade alt-texter.
+2. Fyll på projektens bildlistor i rätt ordning med granskade alt-texter och slutför innehåll och visuell utformning på projektsidorna.
 3. Granska mobilnavigation, bildstorlekar, kontrast, fokus och andra tillgänglighetsdetaljer i webbläsare.
 4. När Madeleine ger åtkomst: undersök Prismic och bekräfta vilket innehåll hon ska kunna redigera. Koppla sedan frontend till valt CMS.
 5. Bekräfta priser, upplagor, storlekar, tillgänglighet och kontaktflöde med Madeleine innan förfrågningar aktiveras.

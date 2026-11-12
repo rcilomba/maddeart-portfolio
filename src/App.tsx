@@ -8,6 +8,7 @@ import type { Project } from './data/projects';
 import ImageDialog from './components/ImageDialog';
 import AllProjects from './components/AllProjects';
 import { Link, Route, Routes } from 'react-router';
+import ProjectPage from './components/ProjectPage';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -132,6 +133,7 @@ function App() {
               />
             }
           />
+          <Route path='/project/:slug' element={<ProjectPage />} />
         </Routes>
       </main>
       <ImageDialog dialogRef={imageDialogRef} project={selectedProject} />

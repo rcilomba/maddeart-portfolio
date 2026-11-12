@@ -177,6 +177,17 @@
   font-weight: 400;
 }
 
+.project-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card h3 a:hover,
+.project-card h3 a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .project-card p {
   margin: 0;
   font-size: 0.875rem;
@@ -356,4 +367,44 @@ a:focus-visible {
   width: 100%;
   height: 80px;
   object-fit: cover;
+}
+
+.project-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px var(--page-padding);
+}
+
+.project-page h1 {
+  margin: 24px 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.project-page a {
+  color: inherit;
+}
+
+.project-page-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  align-items: start;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.project-page-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.project-page nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #d8d4cc;
 }
