@@ -10,9 +10,10 @@ type ImageDialogProps = {
 function ImageDialog({ dialogRef, project }: ImageDialogProps) {
   const [imageIndex, setImageIndex] = useState(0);
 
-  const galleryImages = project.images?.length
-    ? project.images
-    : [{ src: project.image, alt: project.alt }];
+  const galleryImages = [
+    { src: project.image, alt: project.alt },
+    ...(project.images ?? []),
+  ];
 
   const currentImage = galleryImages[imageIndex];
 
