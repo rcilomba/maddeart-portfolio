@@ -1,6 +1,6 @@
 # MaddeArt – projektkontext
 
-Senast granskad: 2026-11-12
+Senast granskad: 2026-11-14
 
 ## Syfte
 
@@ -24,7 +24,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - Förhandsversion: https://maddeart-portfolio.netlify.app/
 - Bilderna i nuvarande datafiler hämtas från `images.prismic.io`.
 - `react-router` är låst till version 7.18.5, som stöder utvecklarens senast uppgivna Node 22.15.0.
-- `public/_redirects` innehåller Netlifys SPA-regel `/* /index.html 200`. Kontroll på publicerad Netlify-version återstår.
+- `public/_redirects` innehåller Netlifys SPA-regel `/* /index.html 200`. Utvecklaren har bekräftat att `/projects` och `/project/baldrsdatter` fungerar vid direktladdning på Netlify.
 
 `README.md` är fortfarande Vites malltext och beskriver inte MaddeArt.
 
@@ -39,7 +39,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - Baldrsdatter har tre bilder i sin `images`-lista. Övriga projekt visar för närvarande omslagsbilden i dialogen.
 - Skip-länk, synliga fokusmarkeringar, bildbeskrivningar och tangentbordsstöd har lagts till.
 - `EditionCard` visar konsttrycket Beneath the Surface. Förfrågningar är avstängda med `enquiriesEnabled: false` i `src/data/edition.ts`. Mejladressen där är en testadress.
-- Produktionsbyggnad och lintkontroll passerade efter tillägget av projektsidor. En direkt HTTP-begäran till `/projects` på Vites lokala förhandsvisning gav 200 och appens HTML. `dist/_redirects` innehåller Netlify-regeln; direktladdning av projektsidorna på Netlify är ännu inte verifierad.
+- Produktionsbyggnad och lintkontroll passerade efter tillägget av projektsidor. En direkt HTTP-begäran till `/projects` på Vites lokala förhandsvisning gav 200 och appens HTML. `dist/_redirects` innehåller Netlify-regeln. Utvecklaren har testat direktladdning av `/projects` och `/project/baldrsdatter` på Netlify samt bilddialog och tangentbordsnavigation.
 
 ## Viktiga filer
 
@@ -67,13 +67,12 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 
 ## Kvar att göra
 
-1. Publicera routingändringarna på Netlify och kontrollera att `/projects` fungerar vid direktladdning och uppdatering samt att navigering och bilddialog fungerar på båda sidorna.
-2. Fyll på projektens bildlistor i rätt ordning med granskade alt-texter och slutför innehåll och visuell utformning på projektsidorna.
-3. Granska mobilnavigation, bildstorlekar, kontrast, fokus och andra tillgänglighetsdetaljer i webbläsare.
-4. När Madeleine ger åtkomst: undersök Prismic och bekräfta vilket innehåll hon ska kunna redigera. Koppla sedan frontend till valt CMS.
-5. Bekräfta priser, upplagor, storlekar, tillgänglighet och kontaktflöde med Madeleine innan förfrågningar aktiveras.
-6. Slutför designen mot zip-referensen, granska innehållet och testa publicerad version.
-7. Bygg och dokumentera den fristående blockchain-prototypen för LIA.
+1. Fyll på projektens bildlistor i rätt ordning med granskade alt-texter och slutför innehåll och visuell utformning på projektsidorna.
+2. Granska mobilnavigation, bildstorlekar, kontrast, fokus och andra tillgänglighetsdetaljer i webbläsare.
+3. När Madeleine ger åtkomst: undersök Prismic och bekräfta vilket innehåll hon ska kunna redigera. Koppla sedan frontend till valt CMS.
+4. Bekräfta priser, upplagor, storlekar, tillgänglighet och kontaktflöde med Madeleine innan förfrågningar aktiveras.
+5. Slutför designen mot zip-referensen, granska innehållet och testa publicerad version.
+6. Bygg och dokumentera den fristående blockchain-prototypen för LIA.
 
 ## Så arbetar vi tillsammans
 
