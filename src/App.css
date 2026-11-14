@@ -430,3 +430,16 @@ a:focus-visible {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+.projects-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.projects-heading h2 {
+  margin: 0;
+}

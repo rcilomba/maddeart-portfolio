@@ -71,7 +71,10 @@ function App() {
                   <p>A photographer based in New York</p>
                 </section>
                 <section id='projects' className='projects'>
-                  <h2>Projects</h2>
+                  <div className='projects-heading'>
+                    <h2>Projects</h2>
+                    <Link to='/projects'>View all projects</Link>
+                  </div>
                   <p>
                     {featuredProjects.length} selected photographic projects.
                   </p>
