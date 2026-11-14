@@ -7,8 +7,8 @@ import { useRef, useState } from 'react';
 import type { Project } from './data/projects';
 import ImageDialog from './components/ImageDialog';
 import AllProjects from './components/AllProjects';
-import { Link, Route, Routes } from 'react-router';
 import ProjectPage from './components/ProjectPage';
+import { Link, NavLink, Route, Routes } from 'react-router';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -36,7 +36,7 @@ function App() {
         </a>
 
         <nav aria-label='Main navigation'>
-          <Link to='/projects'>Projects</Link>
+          <NavLink to='/projects'>Projects</NavLink>
           <a href='/#archive'>Archive</a>
           <a href='/#editions'>Limited Editions</a>
         </nav>

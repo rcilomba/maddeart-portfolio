@@ -425,3 +425,8 @@ a:focus-visible {
 .project-page-meta p {
   margin: 0;
 }
+
+.site-header nav a[aria-current='page'] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
