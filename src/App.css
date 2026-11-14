@@ -443,3 +443,10 @@ a:focus-visible {
 .projects-heading h2 {
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  .site-header nav {
+    width: 100%;
+    gap: 12px 20px;
+  }
+}
