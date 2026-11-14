@@ -42,10 +42,9 @@ function App() {
         Skip to content
       </a>
       <header className='site-header'>
-        <a href='/' className='site-name'>
+        <Link to='/' className='site-name'>
           Madeleine Dalla
-        </a>
-
+        </Link>
         <nav aria-label='Main navigation'>
           <NavLink to='/projects'>Projects</NavLink>
           <a href='/#archive'>Archive</a>
