@@ -41,8 +41,10 @@ function ProjectPage() {
     <article className='project-page'>
       <Link to='/projects'>Back to all projects</Link>
       <h1>{project.title}</h1>
-      {project.subtitle && <p>{project.subtitle}</p>}
-      <p>{project.year}</p>
+      <div className='project-page-meta'>
+        {project.subtitle && <p>{project.subtitle}</p>}
+        <p>{project.year}</p>
+      </div>
       <div className='project-page-gallery'>
         {galleryImages.map((image, index) => (
           <img
