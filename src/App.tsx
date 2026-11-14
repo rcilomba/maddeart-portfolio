@@ -8,7 +8,8 @@ import type { Project } from './data/projects';
 import ImageDialog from './components/ImageDialog';
 import AllProjects from './components/AllProjects';
 import ProjectPage from './components/ProjectPage';
-import { Link, NavLink, Route, Routes } from 'react-router';
+import { Link, NavLink, Route, Routes, useLocation } from 'react-router';
+import { useEffect } from 'react';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -24,6 +25,16 @@ function App() {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
   const featuredProjects = projects.filter((project) => project.featured);
+
+  const { pathname } = useLocation();
+  const previousPath = useRef(pathname);
+
+  useEffect(() => {
+    if (previousPath.current === pathname) return;
+
+    previousPath.current = pathname;
+    document.getElementById('main-content')?.focus();
+  }, [pathname]);
 
   return (
     <>
