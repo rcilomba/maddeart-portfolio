@@ -462,3 +462,12 @@ a:focus-visible {
     gap: 12px 20px;
   }
 }
+
+.projects h2,
+.editions h2,
+.archive h2,
+.all-projects h1 {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
