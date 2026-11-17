@@ -112,26 +112,27 @@ function App() {
                   <Link to='/projects'>View all projects</Link>
                   <div className='archive-grid'>
                     {projects.map((project) => (
-                      <button
-                        key={project.slug}
-                        type='button'
-                        className='archive-image-button'
-                        aria-label={`View ${project.title}`}
-                        aria-haspopup='dialog'
-                        onClick={() => {
-                          setSelectedProject(project);
-                          imageDialogRef.current?.showModal();
-                        }}
-                      >
-                        <img
-                          src={project.image}
-                          alt={project.alt}
-                          loading='lazy'
-                        />
-                        <span className='archive-image-title'>
+                      <div className='archive-item' key={project.slug}>
+                        <button
+                          type='button'
+                          className='archive-image-button'
+                          aria-label={`Preview images from ${project.title}`}
+                          aria-haspopup='dialog'
+                          onClick={() => {
+                            setSelectedProject(project);
+                            imageDialogRef.current?.showModal();
+                          }}
+                        >
+                          <img
+                            src={project.image}
+                            alt={project.alt}
+                            loading='lazy'
+                          />
+                        </button>
+                        <Link to={`/project/${project.slug}`}>
                           {project.title}
-                        </span>
-                      </button>
+                        </Link>
+                      </div>
                     ))}
                   </div>
                 </section>

@@ -487,9 +487,9 @@ a:focus-visible {
   font-size: 0.75rem;
 }
 
-.archive-image-title {
-  display: block;
-  padding-top: 8px;
-  text-align: left;
-  font: inherit;
+.archive-item a {
+  display: inline-block;
+  margin-top: 8px;
+  color: inherit;
+  text-underline-offset: 4px;
 }
