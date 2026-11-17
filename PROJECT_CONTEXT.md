@@ -26,7 +26,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - `react-router` är låst till version 7.18.5, som stöder utvecklarens senast uppgivna Node 22.15.0.
 - `public/_redirects` innehåller Netlifys SPA-regel `/* /index.html 200`. Utvecklaren har bekräftat att `/projects` och `/project/baldrsdatter` fungerar vid direktladdning på Netlify.
 
-`README.md` är fortfarande Vites malltext och beskriver inte MaddeArt.
+`README.md` beskriver MaddeArt, hur projektet startas och vilka routes som finns.
 
 ## Det som fungerar i koden
 
