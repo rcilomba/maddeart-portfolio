@@ -128,6 +128,9 @@ function App() {
                           alt={project.alt}
                           loading='lazy'
                         />
+                        <span className='archive-image-title'>
+                          {project.title}
+                        </span>
                       </button>
                     ))}
                   </div>

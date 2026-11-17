@@ -486,3 +486,10 @@ a:focus-visible {
   color: #262420;
   font-size: 0.75rem;
 }
+
+.archive-image-title {
+  display: block;
+  padding-top: 8px;
+  text-align: left;
+  font: inherit;
+}
