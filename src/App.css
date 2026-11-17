@@ -402,6 +402,12 @@ a:focus-visible {
   height: auto;
 }
 
+.project-page-gallery img:first-child {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  justify-self: center;
+}
+
 .project-page nav {
   display: flex;
   justify-content: space-between;
