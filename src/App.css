@@ -380,6 +380,9 @@ a:focus-visible {
   font-size: clamp(3rem, 8vw, 7rem);
   line-height: 1;
   overflow-wrap: anywhere;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .project-page a {
