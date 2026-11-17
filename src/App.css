@@ -59,8 +59,11 @@
   margin: 12px 0 24px;
   font-size: clamp(3rem, 10vw, 9rem);
   line-height: 1;
-  text-transform: uppercase;
   overflow-wrap: anywhere;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
 }
 
 .intro-location {
