@@ -47,8 +47,8 @@ function App() {
         </Link>
         <nav aria-label='Main navigation'>
           <NavLink to='/projects'>Projects</NavLink>
-          <a href='/#archive'>Archive</a>
           <a href='/#editions'>Limited Editions</a>
+          <a href='/#archive'>Archive</a>
         </nav>
       </header>
 
