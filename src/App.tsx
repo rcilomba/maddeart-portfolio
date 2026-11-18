@@ -116,7 +116,7 @@ function App() {
                 </section>
                 <section id='editions' className='editions'>
                   <h2>Limited Editions</h2>
-                  <p>Selected photographs available as signed prints.</p>
+                  <p>Print details and availability will be announced here.</p>
                   <EditionCard
                     title={edition.title}
                     image={edition.image}
