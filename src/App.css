@@ -60,7 +60,7 @@
   font-size: clamp(3rem, 10vw, 9rem);
   line-height: 1;
   overflow-wrap: anywhere;
-  font-family: Georgia, serif;
+  font-family: var(--font-editorial);
   font-style: italic;
   font-weight: 400;
   text-transform: none;
@@ -70,6 +70,7 @@
   font-size: 0.875rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  font-family: var(--font-meta);
 }
 
 .projects {
@@ -175,7 +176,7 @@
   margin: 0 0 8px;
   padding-top: 12px;
   border-top: 1px solid #d8d4cc;
-  font-family: Georgia, serif;
+  font-family: var(--font-editorial);
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -194,6 +195,7 @@
 .project-card p {
   margin: 0;
   font-size: 0.875rem;
+  font-family: var(--font-meta);
 }
 
 a:focus-visible {
@@ -383,7 +385,7 @@ a:focus-visible {
   font-size: clamp(3rem, 8vw, 7rem);
   line-height: 1;
   overflow-wrap: anywhere;
-  font-family: Georgia, serif;
+  font-family: var(--font-editorial);
   font-style: italic;
   font-weight: 400;
 }
@@ -467,9 +469,10 @@ a:focus-visible {
 .editions h2,
 .archive h2,
 .all-projects h1 {
-  font-family: Georgia, serif;
-  font-style: italic;
+  font-family: var(--font-display);
+  font-style: normal;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .project-image-button {
