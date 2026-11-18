@@ -32,6 +32,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 
 - En startsida på `/` med introduktion, fem utvalda projekt, Limited Editions och arkivförhandsvisning.
 - En separat `/projects`-sida med alla projekt och en egen huvudrubrik. Menylänken Projects och länken View all projects leder dit. Archive och Limited Editions leder till startsidans sektioner.
+- En enkel `/about`-sida med egen menylänk, sidtitel, kort presentation och länk till projektöversikten. Längre biografitext och eventuella kontaktuppgifter behöver godkännas av Madeleine innan publicering.
 - Varje projekttitel leder till en egen sida på `/project/:slug`, med omslagsbild, eventuella extra bilder och länkar till föregående/nästa projekt. Okänd slug visar ett enkelt felmeddelande. Projektbildernas knappar öppnar fortfarande bilddialogen. Projektsidan för Baldrsdatter har testats lokalt i webbläsaren.
 - Projektdata för 14 projekt finns i `src/data/projects.ts`. Fältet `featured` markerar de fem projekt som visas i den utvalda sektionen.
 - `ProjectCard` och `AllProjects` återanvänder samma projektdata.
@@ -43,12 +44,13 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 
 ## Viktiga filer
 
-- `src/App.tsx`: routes för `/`, `/projects` och `/project/:slug`, projektval och gemensam bilddialog.
+- `src/App.tsx`: routes för `/`, `/projects`, `/project/:slug` och `/about`, projektval och gemensam bilddialog.
 - `src/data/projects.ts`: projekt, omslagsbilder, alt-texter och galleribilder.
 - `src/data/edition.ts`: data och förfrågningsstatus för konsttrycket.
 - `src/components/ProjectCard.tsx`: projektkort.
 - `src/components/AllProjects.tsx`: översikt över alla projekt.
 - `src/components/ProjectPage.tsx`: enskilda projekt, bildgalleri och föregående/nästa-navigation.
+- `src/components/AboutPage.tsx`: enkel presentationssida.
 - `src/components/ImageDialog.tsx`: bildvisare och gallerinavigation.
 - `src/components/EditionCard.tsx`: konsttryck.
 - `src/App.css` och `src/index.css`: komponentstilar och globala stilar.
@@ -60,6 +62,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - Startsidan visar fem utvalda projekt. Alla 14 visas på den separata översikten `/projects`. Samma bilddialog används på båda sidorna.
 - Projekt har delbara adresser och stöd för flera fotografier. De flesta gallerierna innehåller ännu bara omslagsbilden; fler bilder och granskade alt-texter behövs.
 - Prismic är förstahandsval för CMS om Madeleines befintliga konto, innehållsmodell, arbetsflöde och kostnader fungerar för den nya sidan. Sanity är ett alternativ, inget beslutat byte. Prismic-bildadresser bevisar inte ensamma hur hela webbplatsen administreras.
+- Awwwards-artikeln om 2020 års prisbelönta sajt uppger att den då byggdes med Nuxt.js, Prismic och Netlify. Det är historisk information; kontrollera den aktuella tekniken när åtkomst finns.
 - Netlify används för förhandsversionen. GoDaddy kan senare användas för att peka Madeleines domän mot den nya sidan. Dokumentera befintliga DNS-poster innan någon domänändring, särskilt poster för e-post. Den gamla sidan ska kunna återställas genom att återställa tidigare DNS-värden.
 - Högupplösta original och tryckfiler ska hållas privata. Fotografier som visas i en webbläsare kan inte skyddas helt mot nedladdning.
 - Ingen kundvagn eller onlinebetalning planeras. En framtida förfrågningsfunktion ska använda bekräftad kontaktadress och korrekta verk-, storleks- och prisuppgifter.

@@ -11,6 +11,7 @@ import ProjectPage from './components/ProjectPage';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router';
 import { useEffect } from 'react';
 import { cardImageUrl } from './utils/cardImageUrl';
+import AboutPage from './components/AboutPage';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -50,6 +51,7 @@ function App() {
           <NavLink to='/projects'>Projects</NavLink>
           <a href='/#editions'>Limited Editions</a>
           <a href='/#archive'>Archive</a>
+          <NavLink to='/about'>About</NavLink>
         </nav>
       </header>
 
@@ -152,6 +154,7 @@ function App() {
             }
           />
           <Route path='/project/:slug' element={<ProjectPage />} />
+          <Route path='/about' element={<AboutPage />} />
           <Route
             path='*'
             element={
