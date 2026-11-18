@@ -10,6 +10,7 @@ import AllProjects from './components/AllProjects';
 import ProjectPage from './components/ProjectPage';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router';
 import { useEffect } from 'react';
+import { cardImageUrl } from './utils/cardImageUrl';
 
 function App() {
   const contactEmail = edition.contactEmail;
@@ -124,7 +125,7 @@ function App() {
                           }}
                         >
                           <img
-                            src={project.image}
+                            src={cardImageUrl(project.image)}
                             alt={project.alt}
                             loading='lazy'
                           />

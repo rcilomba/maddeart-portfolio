@@ -1,5 +1,6 @@
 import type { Project } from '../data/projects';
 import { Link } from 'react-router';
+import { cardImageUrl } from '../utils/cardImageUrl';
 
 type ProjectCardProps = Project & {
   onOpen: () => void;
@@ -22,7 +23,7 @@ function ProjectCard({
         aria-label={`Preview image from ${title}`}
         aria-haspopup='dialog'
       >
-        <img src={image} alt={alt} loading='lazy' />
+        <img src={cardImageUrl(image)} alt={alt} loading='lazy' />
       </button>
       <h3>
         <Link to={`/project/${slug}`}>{title}</Link>
