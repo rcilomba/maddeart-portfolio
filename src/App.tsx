@@ -116,7 +116,7 @@ function App() {
                         <button
                           type='button'
                           className='archive-image-button'
-                          aria-label={`Preview images from ${project.title}`}
+                          aria-label={`Preview image from ${project.title}`}
                           aria-haspopup='dialog'
                           onClick={() => {
                             setSelectedProject(project);

@@ -19,7 +19,7 @@ function ProjectCard({
         type='button'
         className='project-image-button'
         onClick={onOpen}
-        aria-label={`Preview images from ${title}`}
+        aria-label={`Preview image from ${title}`}
         aria-haspopup='dialog'
       >
         <img src={image} alt={alt} loading='lazy' />
