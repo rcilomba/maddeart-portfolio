@@ -22,6 +22,26 @@
   text-decoration: underline;
 }
 
+.theme-toggle {
+  padding: 8px 12px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.theme-toggle[aria-pressed='true'] {
+  background: var(--page-text);
+  color: var(--page-bg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
 .site-name {
   font-weight: 700;
 }
@@ -75,7 +95,7 @@
 
 .projects {
   padding: 64px var(--page-padding);
-  border-top: 1px solid #d8d4cc;
+  border-top: 1px solid var(--page-border);
 }
 
 .projects h2 {
@@ -149,7 +169,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 32px var(--page-padding);
-  border-top: 1px solid #d8d4cc;
+  border-top: 1px solid var(--page-border);
 }
 
 .site-footer p {
@@ -175,7 +195,7 @@
 .project-card h3 {
   margin: 0 0 8px;
   padding-top: 12px;
-  border-top: 1px solid #d8d4cc;
+  border-top: 1px solid var(--page-border);
   font-family: var(--font-editorial);
   font-size: 1.5rem;
   font-weight: 400;
@@ -213,8 +233,8 @@ a:focus-visible {
   left: 12px;
   z-index: 100;
   padding: 12px 16px;
-  background: #f7f5f0;
-  color: #262420;
+  background: var(--page-bg);
+  color: var(--page-text);
   transform: translateY(-200%);
 }
 
@@ -274,8 +294,8 @@ a:focus-visible {
   max-height: 90svh;
   padding: 24px;
   border: 0;
-  background: #f7f5f0;
-  color: #262420;
+  background: var(--page-bg);
+  color: var(--page-text);
   overflow-y: auto;
 }
 
@@ -333,7 +353,7 @@ a:focus-visible {
 
 .all-projects {
   padding: 64px var(--page-padding);
-  border-top: 1px solid #d8d4cc;
+  border-top: 1px solid var(--page-border);
 }
 
 .all-projects h1 {
@@ -420,7 +440,7 @@ a:focus-visible {
   gap: 16px;
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid #d8d4cc;
+  border-top: 1px solid var(--page-border);
 }
 
 @media (max-width: 600px) {
@@ -485,8 +505,8 @@ a:focus-visible {
   left: 12px;
   bottom: 28px;
   padding: 6px 10px;
-  background: #f7f5f0;
-  color: #262420;
+  background: var(--page-bg);
+  color: var(--page-text);
   font-size: 0.75rem;
 }
 

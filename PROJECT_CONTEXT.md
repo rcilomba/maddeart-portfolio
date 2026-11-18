@@ -39,6 +39,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - `ImageDialog` öppnar ett projekt och bläddrar mellan dess bilder med knappar, piltangenter och miniatyrer. Bildräknaren visas när projektet har flera bilder.
 - Baldrsdatter har tre bilder i sin `images`-lista. Övriga projekt visar för närvarande omslagsbilden i dialogen.
 - Skip-länk, synliga fokusmarkeringar, bildbeskrivningar och tangentbordsstöd har lagts till.
+- Besökaren kan växla mellan ljust och mörkt läge med en knapp i sidhuvudet. Valet sparas i webbläsarens localStorage. Färgtemat gäller sidytor, text, avdelare och bilddialog; fotografierna har inga färgfilter.
 - `EditionCard` visar konsttrycket Beneath the Surface. Förfrågningar är avstängda med `enquiriesEnabled: false` i `src/data/edition.ts`. Mejladressen där är en testadress.
 - Produktionsbyggnad och lintkontroll passerade efter tillägget av projektsidor. En direkt HTTP-begäran till `/projects` på Vites lokala förhandsvisning gav 200 och appens HTML. `dist/_redirects` innehåller Netlify-regeln. Utvecklaren har testat direktladdning av `/projects` och `/project/baldrsdatter` på Netlify samt bilddialog och tangentbordsnavigation.
 
@@ -64,6 +65,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - Prismic är förstahandsval för CMS om Madeleines befintliga konto, innehållsmodell, arbetsflöde och kostnader fungerar för den nya sidan. Sanity är ett alternativ, inget beslutat byte. Prismic-bildadresser bevisar inte ensamma hur hela webbplatsen administreras.
 - Awwwards-artikeln om 2020 års prisbelönta sajt uppger att den då byggdes med Nuxt.js, Prismic och Netlify. Det är historisk information; kontrollera den aktuella tekniken när åtkomst finns.
 - Netlify används för förhandsversionen. GoDaddy kan senare användas för att peka Madeleines domän mot den nya sidan. Dokumentera befintliga DNS-poster innan någon domänändring, särskilt poster för e-post. Den gamla sidan ska kunna återställas genom att återställa tidigare DNS-värden.
+- Mörkt läge är ett frivilligt besökarval. Fotografiernas originalfärger ska bevaras i båda lägena.
 - Högupplösta original och tryckfiler ska hållas privata. Fotografier som visas i en webbläsare kan inte skyddas helt mot nedladdning.
 - Ingen kundvagn eller onlinebetalning planeras. En framtida förfrågningsfunktion ska använda bekräftad kontaktadress och korrekta verk-, storleks- och prisuppgifter.
 - Blockchain-delen är en separat LIA-prototyp i `blockchain-demo`, utan beroende från webbplatsen eller CMS. Den är inte byggd ännu.

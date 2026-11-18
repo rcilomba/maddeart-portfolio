@@ -26,6 +26,10 @@ function App() {
   const imageDialogRef = useRef<HTMLDialogElement>(null);
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
 
+  const [theme, setTheme] = useState<'light' | 'dark'>(() =>
+    localStorage.getItem('maddeart-theme') === 'dark' ? 'dark' : 'light',
+  );
+
   const featuredProjects = projects.filter((project) => project.featured);
 
   const { pathname } = useLocation();
@@ -37,6 +41,11 @@ function App() {
     previousPath.current = pathname;
     document.getElementById('main-content')?.focus();
   }, [pathname]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('maddeart-theme', theme);
+  }, [theme]);
 
   return (
     <>
@@ -53,6 +62,14 @@ function App() {
           <a href='/#archive'>Archive</a>
           <NavLink to='/about'>About</NavLink>
         </nav>
+        <button
+          type='button'
+          className='theme-toggle'
+          aria-pressed={theme === 'dark'}
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >
+          Dark mode
+        </button>
       </header>
 
       <main id='main-content' tabIndex={-1}>

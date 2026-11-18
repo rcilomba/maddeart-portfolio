@@ -1,12 +1,23 @@
 :root {
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  color: #262420;
-  background-color: #f7f5f0;
+  --page-bg: #f7f5f0;
+  --page-text: #262420;
+  --page-border: #d8d4cc;
+  color: var(--page-text);
+  background-color: var(--page-bg);
   --page-padding: clamp(20px, 4vw, 64px);
   --font-display: 'Oswald', Arial, sans-serif;
   --font-editorial: 'Instrument Serif', Georgia, serif;
   --font-meta: 'DM Mono', Consolas, monospace;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --page-bg: #181818;
+  --page-text: #f7f5f0;
+  --page-border: #55514b;
+  color-scheme: dark;
 }
 
 *,
