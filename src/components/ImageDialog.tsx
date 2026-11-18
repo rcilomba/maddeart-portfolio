@@ -55,11 +55,11 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
       <h2 id='image-dialog-title'>{project.title}</h2>
       {project.description && <p>{project.description}</p>}
       {project.subtitle && <p>{project.subtitle}</p>}
-      <p aria-live='polite' aria-atomic='true'>
-        {galleryImages.length > 1
-          ? `${project.title} — ${imageIndex + 1} / ${galleryImages.length}`
-          : project.title}
-      </p>
+      {galleryImages.length > 1 && (
+        <p aria-live='polite' aria-atomic='true'>
+          Image {imageIndex + 1} of {galleryImages.length}
+        </p>
+      )}
       <img src={currentImage.src} alt={currentImage.alt} />
       {galleryImages.length > 1 && (
         <div
