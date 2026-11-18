@@ -31,6 +31,7 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
     <dialog
       onClose={() => setImageIndex(0)}
       onKeyDown={(event) => {
+        if (galleryImages.length < 2) return;
         if (event.key === 'ArrowRight') {
           event.preventDefault();
           showNextImage();
@@ -70,7 +71,7 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
             <button
               key={image.src}
               type='button'
-              aria-label={`Show image ${index + 1}`}
+              aria-label={`Show image ${index + 1} of ${galleryImages.length} from ${project.title}`}
               aria-pressed={index === imageIndex}
               onClick={() => setImageIndex(index)}
             >
