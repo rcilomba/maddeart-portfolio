@@ -54,6 +54,12 @@ function ProjectPage() {
             alt={image.alt}
             loading={index === 0 ? 'eager' : 'lazy'}
             fetchPriority={index === 0 ? 'high' : undefined}
+            srcSet={`${galleryImageUrl(image.src, 600)} 600w, ${galleryImageUrl(image.src, 1000)} 1000w, ${galleryImageUrl(image.src, 1600)} 1600w`}
+            sizes={
+              index === 0
+                ? '(max-width: 960px) 100vw, 900px'
+                : '(max-width: 800px) 100vw, 50vw'
+            }
           />
         ))}
       </div>

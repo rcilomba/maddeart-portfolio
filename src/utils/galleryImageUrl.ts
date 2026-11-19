@@ -1,9 +1,9 @@
-export function galleryImageUrl(src: string) {
+export function galleryImageUrl(src: string, width = 1600) {
   if (!src.startsWith('https://images.prismic.io/')) return src;
 
   const url = new URL(src);
-  url.searchParams.set('w', '1600');
   url.searchParams.delete('h');
+  url.searchParams.set('w', String(width));
 
   return url.toString();
 }

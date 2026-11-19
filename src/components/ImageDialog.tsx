@@ -60,7 +60,12 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
           Image {imageIndex + 1} of {galleryImages.length}
         </p>
       )}
-      <img src={galleryImageUrl(currentImage.src)} alt={currentImage.alt} />
+      <img
+        src={galleryImageUrl(currentImage.src)}
+        srcSet={`${galleryImageUrl(currentImage.src, 600)} 600w, ${galleryImageUrl(currentImage.src, 1000)} 1000w, ${galleryImageUrl(currentImage.src, 1600)} 1600w`}
+        sizes='(max-width: 1040px) 85vw, 912px'
+        alt={currentImage.alt}
+      />
       {galleryImages.length > 1 && (
         <div
           className='gallery-thumbnails'
