@@ -1,6 +1,7 @@
 import type { RefObject } from 'react';
 import type { Project } from '../data/projects';
 import { useState } from 'react';
+import { galleryImageUrl } from '../utils/galleryImageUrl';
 
 type ImageDialogProps = {
   dialogRef: RefObject<HTMLDialogElement | null>;
@@ -51,7 +52,6 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
       >
         Close
       </button>
-
       <h2 id='image-dialog-title'>{project.title}</h2>
       {project.description && <p>{project.description}</p>}
       {project.subtitle && <p>{project.subtitle}</p>}
@@ -60,7 +60,7 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
           Image {imageIndex + 1} of {galleryImages.length}
         </p>
       )}
-      <img src={currentImage.src} alt={currentImage.alt} />
+      <img src={galleryImageUrl(currentImage.src)} alt={currentImage.alt} />
       {galleryImages.length > 1 && (
         <div
           className='gallery-thumbnails'

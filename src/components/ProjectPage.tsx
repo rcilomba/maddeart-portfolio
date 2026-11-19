@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router';
 import { projects } from '../data/projects';
 import { useEffect } from 'react';
+import { galleryImageUrl } from '../utils/galleryImageUrl';
 
 function ProjectPage() {
   const { slug } = useParams();
@@ -49,7 +50,7 @@ function ProjectPage() {
         {galleryImages.map((image, index) => (
           <img
             key={image.src}
-            src={image.src}
+            src={galleryImageUrl(image.src)}
             alt={image.alt}
             loading={index === 0 ? 'eager' : 'lazy'}
             fetchPriority={index === 0 ? 'high' : undefined}
