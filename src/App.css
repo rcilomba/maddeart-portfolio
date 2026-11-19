@@ -553,3 +553,12 @@ a:focus-visible {
     grid-row: 1;
   }
 }
+
+.image-dialog .dialog-close {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: block;
+  margin-left: auto;
+  background: var(--page-bg);
+}

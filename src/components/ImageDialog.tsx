@@ -47,6 +47,7 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
     >
       <button
         type='button'
+        className='dialog-close'
         aria-label='Close image viewer'
         onClick={() => dialogRef.current?.close()}
       >
