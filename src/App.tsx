@@ -159,31 +159,34 @@ function App() {
                   <p>A photographic index of selected projects.</p>
                   <Link to='/projects'>View all projects</Link>
                   <div className='archive-grid'>
-                    {projects.map((project) => (
-                      <div className='archive-item' key={project.slug}>
-                        <button
-                          type='button'
-                          className='archive-image-button'
-                          aria-label={`Preview image from ${project.title}`}
-                          aria-haspopup='dialog'
-                          onClick={() => {
-                            setSelectedProject(project);
-                            imageDialogRef.current?.showModal();
-                          }}
-                        >
-                          <img
-                            src={cardImageUrl(project.image)}
-                            srcSet={`${cardImageUrl(project.image, 360)} 360w, ${cardImageUrl(project.image, 600)} 600w, ${cardImageUrl(project.image, 900)} 900w`}
-                            sizes='(max-width: 600px) 50vw, 267px'
-                            alt={project.alt}
-                            loading='lazy'
-                          />
-                        </button>
-                        <Link to={`/project/${project.slug}`}>
-                          {project.title}
-                        </Link>
-                      </div>
-                    ))}
+                    {projects
+                      .filter((project) => !project.featured)
+                      .slice(0, 6)
+                      .map((project) => (
+                        <div className='archive-item' key={project.slug}>
+                          <button
+                            type='button'
+                            className='archive-image-button'
+                            aria-label={`Preview image from ${project.title}`}
+                            aria-haspopup='dialog'
+                            onClick={() => {
+                              setSelectedProject(project);
+                              imageDialogRef.current?.showModal();
+                            }}
+                          >
+                            <img
+                              src={cardImageUrl(project.image)}
+                              srcSet={`${cardImageUrl(project.image, 360)} 360w, ${cardImageUrl(project.image, 600)} 600w, ${cardImageUrl(project.image, 900)} 900w`}
+                              sizes='(max-width: 600px) 50vw, 267px'
+                              alt={project.alt}
+                              loading='lazy'
+                            />
+                          </button>
+                          <Link to={`/project/${project.slug}`}>
+                            {project.title}
+                          </Link>
+                        </div>
+                      ))}
                   </div>
                 </section>
               </>
