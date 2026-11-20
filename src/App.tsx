@@ -103,7 +103,7 @@ function App() {
                         <p>Featured project</p>
                         <h2>{heroProject.title}</h2>
                         <Link to={`/project/${heroProject.slug}`}>
-                          Explore project
+                          Explore {heroProject.title}
                         </Link>
                       </div>
                     </div>
