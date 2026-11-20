@@ -513,10 +513,25 @@ a:focus-visible {
 .projects-heading {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 16px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--page-border);
+}
+
+.projects-heading .section-index {
+  margin: 0 0 8px;
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.projects-heading>a {
+  color: inherit;
+  text-underline-offset: 4px;
 }
 
 .projects-heading h2 {

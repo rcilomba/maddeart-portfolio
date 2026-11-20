@@ -111,7 +111,10 @@ function App() {
                 </section>
                 <section id='projects' className='projects'>
                   <div className='projects-heading'>
-                    <h2>Projects</h2>
+                    <div>
+                      <p className='section-index'>Selected works</p>
+                      <h2>Projects</h2>
+                    </div>
                     <Link to='/projects'>View all projects</Link>
                   </div>
                   <p>
