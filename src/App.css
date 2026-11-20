@@ -102,7 +102,7 @@
   color: var(--page-text);
 }
 
-.hero-feature > img {
+.hero-feature>img {
   width: 100%;
   height: 100%;
   aspect-ratio: 4 / 3;
@@ -134,6 +134,7 @@
 
   .hero-feature-copy {
     padding: 24px;
+    order: -1;
   }
 }
 
