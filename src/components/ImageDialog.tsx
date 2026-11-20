@@ -81,7 +81,11 @@ function ImageDialog({ dialogRef, project }: ImageDialogProps) {
               aria-pressed={index === imageIndex}
               onClick={() => setImageIndex(index)}
             >
-              <img src={image.src} alt='' loading='lazy' />
+              <img
+                src={galleryImageUrl(image.src, 160)}
+                alt=''
+                loading='lazy'
+              />
             </button>
           ))}
         </div>
