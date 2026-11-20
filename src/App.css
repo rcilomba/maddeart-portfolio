@@ -153,6 +153,7 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   margin-bottom: 16px;
+  transition: opacity 180ms ease;
 }
 
 .project-grid {
@@ -621,4 +622,10 @@ a:focus-visible {
   display: block;
   margin-left: auto;
   background: var(--page-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card img {
+    transition: none;
+  }
 }
