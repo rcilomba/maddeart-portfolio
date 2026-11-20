@@ -145,6 +145,8 @@ function App() {
                         >
                           <img
                             src={cardImageUrl(project.image)}
+                            srcSet={`${cardImageUrl(project.image, 360)} 360w, ${cardImageUrl(project.image, 600)} 600w, ${cardImageUrl(project.image, 900)} 900w`}
+                            sizes='(max-width: 600px) 50vw, 267px'
                             alt={project.alt}
                             loading='lazy'
                           />

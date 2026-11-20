@@ -23,7 +23,13 @@ function ProjectCard({
         aria-label={`Preview image from ${title}`}
         aria-haspopup='dialog'
       >
-        <img src={cardImageUrl(image)} alt={alt} loading='lazy' />
+        <img
+          src={cardImageUrl(image)}
+          srcSet={`${cardImageUrl(image, 360)} 360w, ${cardImageUrl(image, 600)} 600w, ${cardImageUrl(image, 900)} 900w`}
+          sizes='(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw'
+          alt={alt}
+          loading='lazy'
+        />
       </button>
       <h3>
         <Link to={`/project/${slug}`}>{title}</Link>
