@@ -345,6 +345,24 @@ a:focus-visible {
   overflow-y: auto;
 }
 
+.image-dialog[open] {
+  animation: dialog-enter 180ms ease-out;
+}
+
+
+
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .image-dialog::backdrop {
   background: rgb(0 0 0 / 70%);
 }
@@ -627,5 +645,9 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .project-card img {
     transition: none;
+  }
+
+  .image-dialog[open] {
+    animation: none;
   }
 }
