@@ -31,6 +31,9 @@ function App() {
   );
 
   const featuredProjects = projects.filter((project) => project.featured);
+  const heroProject = featuredProjects.find(
+    (project) => project.slug === 'lost-in-anxiety',
+  );
 
   const { pathname } = useLocation();
   const previousPath = useRef(pathname);
@@ -88,6 +91,23 @@ function App() {
                   <p className='intro-location'>New York</p>
                   <h1>Madeleine Dalla</h1>
                   <p>A photographer based in New York</p>
+                  {heroProject && (
+                    <div className='hero-feature'>
+                      <img
+                        src={cardImageUrl(heroProject.image, 900)}
+                        srcSet={`${cardImageUrl(heroProject.image, 360)} 360w, ${cardImageUrl(heroProject.image, 600)} 600w, ${cardImageUrl(heroProject.image, 900)} 900w`}
+                        sizes='(max-width: 600px) calc(100vw - 40px), 380px'
+                        alt={heroProject.alt}
+                      />
+                      <div className='hero-feature-copy'>
+                        <p>Featured project</p>
+                        <h2>{heroProject.title}</h2>
+                        <Link to={`/project/${heroProject.slug}`}>
+                          Explore project
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </section>
                 <section id='projects' className='projects'>
                   <div className='projects-heading'>
