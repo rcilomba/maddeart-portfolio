@@ -13,6 +13,9 @@ import { useEffect } from 'react';
 import { cardImageUrl } from './utils/cardImageUrl';
 import AboutPage from './components/AboutPage';
 
+const heroBackgroundImage =
+  'https://images.prismic.io/madeleinedalla/2f9e9cca-408f-42b3-b26f-22866c3e9116_beneath_the_surface_06.jpg?auto=compress,format&w=1920';
+
 function App() {
   const contactEmail = edition.contactEmail;
   const printTitle = edition.title;
@@ -84,7 +87,9 @@ function App() {
                 <section className='intro'>
                   <img
                     className='intro-image'
-                    src='https://images.prismic.io/madeleinedalla/2f9e9cca-408f-42b3-b26f-22866c3e9116_beneath_the_surface_06.jpg?auto=compress,format&w=1920'
+                    src={cardImageUrl(heroBackgroundImage, 1920)}
+                    srcSet={`${cardImageUrl(heroBackgroundImage, 640)} 640w, ${cardImageUrl(heroBackgroundImage, 1280)} 1280w, ${cardImageUrl(heroBackgroundImage, 1920)} 1920w`}
+                    sizes='100vw'
                     alt=''
                     fetchPriority='high'
                   />
