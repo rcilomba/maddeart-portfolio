@@ -1,6 +1,6 @@
 # MaddeArt – projektkontext
 
-Senast granskad: 2026-11-14
+Senast granskad: 2026-11-20
 
 ## Syfte
 
@@ -37,6 +37,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - Projektdata för 14 projekt finns i `src/data/projects.ts`. Fältet `featured` markerar de fem projekt som visas i den utvalda sektionen.
 - `ProjectCard` och `AllProjects` återanvänder samma projektdata.
 - `ImageDialog` öppnar ett projekt och bläddrar mellan dess bilder med knappar, piltangenter och miniatyrer. Bildräknaren visas när projektet har flera bilder.
+- Projektsidor, bilddialog, projektkort och arkiv använder responsiva Prismic-bildstorlekar via `srcSet` och `sizes`. Dialogens stängningsknapp ligger kvar synlig när innehållet scrollas. Galleriet och dialogens navigering har kontrollerats i webbläsaren; kortens bildval bör fortfarande granskas på olika skärmar.
 - Baldrsdatter har tre bilder i sin `images`-lista. Övriga projekt visar för närvarande omslagsbilden i dialogen.
 - Skip-länk, synliga fokusmarkeringar, bildbeskrivningar och tangentbordsstöd har lagts till.
 - Besökaren kan växla mellan ljust och mörkt läge med en knapp i sidhuvudet. Valet sparas i webbläsarens localStorage. Färgtemat gäller sidytor, text, avdelare och bilddialog; fotografierna har inga färgfilter.
@@ -53,6 +54,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - `src/components/ProjectPage.tsx`: enskilda projekt, bildgalleri och föregående/nästa-navigation.
 - `src/components/AboutPage.tsx`: enkel presentationssida.
 - `src/components/ImageDialog.tsx`: bildvisare och gallerinavigation.
+- `src/utils/cardImageUrl.ts` och `src/utils/galleryImageUrl.ts`: bildadresser i storlekar anpassade för kort respektive gallerier.
 - `src/components/EditionCard.tsx`: konsttryck.
 - `src/App.css` och `src/index.css`: komponentstilar och globala stilar.
 - `src/main.tsx`: startar React-appen inuti `BrowserRouter`.
@@ -73,7 +75,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 ## Kvar att göra
 
 1. Fyll på projektens bildlistor i rätt ordning med granskade alt-texter och slutför innehåll och visuell utformning på projektsidorna.
-2. Granska mobilnavigation, bildstorlekar, kontrast, fokus och andra tillgänglighetsdetaljer i webbläsare.
+2. Granska mobilnavigation, responsiva bildval, kontrast, fokus och andra tillgänglighetsdetaljer i webbläsare.
 3. När Madeleine ger åtkomst: undersök Prismic och bekräfta vilket innehåll hon ska kunna redigera. Koppla sedan frontend till valt CMS.
 4. Bekräfta priser, upplagor, storlekar, tillgänglighet och kontaktflöde med Madeleine innan förfrågningar aktiveras.
 5. Slutför designen mot zip-referensen, granska innehållet och testa publicerad version.
