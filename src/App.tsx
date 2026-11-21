@@ -12,6 +12,7 @@ import { Link, NavLink, Route, Routes, useLocation } from 'react-router';
 import { useEffect } from 'react';
 import { cardImageUrl } from './utils/cardImageUrl';
 import AboutPage from './components/AboutPage';
+import NotFoundPage from './components/NotFoundPage';
 
 const heroBackgroundImage =
   'https://images.prismic.io/madeleinedalla/2f9e9cca-408f-42b3-b26f-22866c3e9116_beneath_the_surface_06.jpg?auto=compress,format&w=1920';
@@ -205,16 +206,7 @@ function App() {
           />
           <Route path='/project/:slug' element={<ProjectPage />} />
           <Route path='/about' element={<AboutPage />} />
-          <Route
-            path='*'
-            element={
-              <section className='project-page'>
-                <h1>Page not found</h1>
-                <p>We couldn't find that page.</p>
-                <Link to='/'>Back to home</Link>
-              </section>
-            }
-          />
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </main>
       <ImageDialog dialogRef={imageDialogRef} project={selectedProject} />
