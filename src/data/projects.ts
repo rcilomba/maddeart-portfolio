@@ -18,7 +18,6 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Baldrsdatter',
-    subtitle: 'Baldrsdatter',
     year: '2018',
     image:
       'https://images.prismic.io/madeleinedalla/5ac5a31d-f00b-4360-8708-46956f60caf4_baldrsdatter_01.jpg?auto=compress,format&w=900',
