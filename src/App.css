@@ -13,6 +13,12 @@
   gap: 24px;
 }
 
+.site-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .site-header a {
   color: inherit;
   text-decoration: none;
