@@ -213,6 +213,10 @@ function App() {
       <footer className='site-footer'>
         <p className='site-name'>Madeleine Dalla</p>
         <p>Photographer &amp; artist · New York</p>
+        <nav aria-label='Footer navigation'>
+          <Link to='/projects'>Projects</Link>
+          <Link to='/about'>About</Link>
+        </nav>
       </footer>
     </>
   );

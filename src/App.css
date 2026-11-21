@@ -233,6 +233,20 @@
   margin: 0;
 }
 
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.site-footer nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
 @media (min-width: 1000px) {
   .project-grid {
     max-width: none;
