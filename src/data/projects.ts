@@ -26,7 +26,8 @@ export const projects: Project[] = [
     slug: 'baldrsdatter',
     featured: true,
     images: [
-      {        src: 'https://images.prismic.io/madeleinedalla/abc07960-4a14-4138-9fd9-04cf3855727f_baldrsdatter_02.jpg?auto=compress,format&rect=0,0,1999,2452&w=600&h=736',
+      {
+        src: 'https://images.prismic.io/madeleinedalla/abc07960-4a14-4138-9fd9-04cf3855727f_baldrsdatter_02.jpg?auto=compress,format&rect=0,0,1999,2452&w=600&h=736',
         alt: 'Person seated in a white coat and white-framed sunglasses against an orange background',
       },
       {
@@ -35,7 +36,7 @@ export const projects: Project[] = [
       },
       {
         src: 'https://images.prismic.io/madeleinedalla/03d9600c-3919-414c-810a-9099f55fcd16_baldrsdatter_08.jpg?auto=compress,format&rect=0,0,2000,2452&w=1200&h=1471',
-        alt: 'Person standing very close',
+        alt: 'Low-angle portrait of a seated person wearing white-framed sunglasses, hoop earrings and a patterned outfit against a warm orange background',
       },
     ],
   },
