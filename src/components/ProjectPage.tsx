@@ -20,7 +20,7 @@ function ProjectPage() {
 
   if (!project) {
     return (
-      <section>
+      <section className='project-page'>
         <h1>Project not found</h1>
         <Link to='/projects'>Back to all projects</Link>
       </section>
