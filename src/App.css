@@ -22,6 +22,11 @@
   text-decoration: underline;
 }
 
+.site-header nav a[aria-current='page'] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .theme-toggle {
   padding: 8px 12px;
   border: 1px solid currentColor;
