@@ -27,6 +27,7 @@ function AllProjects({ onOpenProject }: AllProjectsProps) {
             key={project.slug}
             {...project}
             onOpen={() => onOpenProject(project)}
+            headingLevel='h2'
           />
         ))}
       </div>

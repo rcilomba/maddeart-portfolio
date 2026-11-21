@@ -4,6 +4,7 @@ import { cardImageUrl } from '../utils/cardImageUrl';
 
 type ProjectCardProps = Project & {
   onOpen: () => void;
+  headingLevel?: 'h2' | 'h3';
 };
 
 function ProjectCard({
@@ -13,7 +14,10 @@ function ProjectCard({
   alt,
   slug,
   onOpen,
+  headingLevel = 'h3',
 }: ProjectCardProps) {
+  const Heading = headingLevel;
+
   return (
     <article className='project-card'>
       <button
@@ -31,9 +35,9 @@ function ProjectCard({
           loading='lazy'
         />
       </button>
-      <h3>
+      <Heading>
         <Link to={`/project/${slug}`}>{title}</Link>
-      </h3>
+      </Heading>
       <p>{year}</p>
     </article>
   );
