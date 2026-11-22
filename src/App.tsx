@@ -72,10 +72,9 @@ function App() {
         <button
           type='button'
           className='theme-toggle'
-          aria-pressed={theme === 'dark'}
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
-          Dark mode
+          {theme === 'dark' ? 'Light mode' : 'Dark mode'}
         </button>
       </header>
 
