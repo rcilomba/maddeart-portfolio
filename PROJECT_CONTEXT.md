@@ -23,6 +23,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - GitHub-repo: https://github.com/rcilomba/maddeart-portfolio
 - Förhandsversion: https://maddeart-portfolio.netlify.app/
 - Bilderna i nuvarande datafiler hämtas från `images.prismic.io`.
+- Typsnitten DM Mono, Instrument Serif och Oswald levereras lokalt via Fontsource. Google Fonts-stilmallen togs bort efter att Lighthouse visade den som en renderingsblockerande förfrågan. Utseendet har kontrollerats i lokal förhandsvisning; prestandaeffekten på Netlify är ännu inte uppmätt.
 - `react-router` är låst till version 7.18.5, som stöder utvecklarens senast uppgivna Node 22.15.0.
 - `public/_redirects` innehåller Netlifys SPA-regel `/* /index.html 200`. Utvecklaren har bekräftat att `/projects` och `/project/baldrsdatter` fungerar vid direktladdning på Netlify.
 
