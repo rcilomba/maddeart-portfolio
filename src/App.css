@@ -362,6 +362,7 @@ a:focus-visible {
 
 .image-dialog {
   width: min(960px, 92vw);
+  height: 90svh;
   max-height: 90svh;
   padding: 24px;
   border: 0;
@@ -371,10 +372,18 @@ a:focus-visible {
 }
 
 .image-dialog[open] {
+  display: flex;
+  flex-direction: column;
   animation: dialog-enter 180ms ease-out;
 }
 
-
+.image-dialog>img {
+  flex: 1;
+  min-height: 180px;
+  width: 100%;
+  max-height: none;
+  object-fit: contain;
+}
 
 @keyframes dialog-enter {
   from {
@@ -394,12 +403,6 @@ a:focus-visible {
 
 .image-dialog h2 {
   margin: 16px 0;
-}
-
-.image-dialog img {
-  width: 100%;
-  max-height: 65svh;
-  object-fit: contain;
 }
 
 .image-dialog button {
@@ -674,5 +677,18 @@ a:focus-visible {
 
   .image-dialog[open] {
     animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    overflow-x: visible;
+  }
+
+  .gallery-thumbnails button {
+    min-width: 0;
   }
 }
