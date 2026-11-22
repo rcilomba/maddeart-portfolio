@@ -692,3 +692,38 @@ a:focus-visible {
     min-width: 0;
   }
 }
+
+@media (min-width: 1000px) {
+  .all-projects .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 601px) and (max-height: 650px) {
+  .image-dialog {
+    padding: 16px;
+  }
+
+  .image-dialog h2,
+  .image-dialog>p {
+    margin: 8px 0;
+  }
+
+  .image-dialog>img {
+    min-height: 120px;
+  }
+
+  .gallery-thumbnails {
+    flex-shrink: 0;
+    margin-top: 8px;
+    padding: 4px;
+  }
+
+  .gallery-thumbnails img {
+    height: 56px;
+  }
+
+  .dialog-navigation {
+    margin-top: 8px;
+  }
+}
