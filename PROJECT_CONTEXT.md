@@ -1,6 +1,6 @@
 # MaddeArt – projektkontext
 
-Senast granskad: 2026-11-21
+Senast granskad: 2026-11-23
 
 ## Syfte
 
@@ -31,7 +31,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 
 ## Det som fungerar i koden
 
-- Startsidan har ett utvalt projekt i introduktionen. På mobil visas projektets text före bilden. Arkivet visar sex projekt som inte är markerade som `featured`; alla projekt finns på `/projects`.
+- Startsidan har en karusell i introduktionen som växlar mellan de fem utvalda projektens omslagsbilder, titlar och länkar var fjärde sekund. Besökaren kan bläddra manuellt och pausa eller starta bildväxlingen. Den pausas vid interaktion med projektlänken och när besökaren bläddrar manuellt. En sidvändningsanimation används om besökaren inte föredrar minskad rörelse. På mobil visas bilden före projektets text. Arkivet visar sex projekt som inte är markerade som `featured`; alla projekt finns på `/projects`.
 - Introduktionsbilden, konsttrycksbilden och dialogens miniatyrer använder bildstorlekar anpassade för respektive visningsyta. `index.html` förbereder anslutningen till Prismic-bildservern.
 - Projektkort och bilddialog har korta animationer som stängs av när besökaren föredrar minskad rörelse. Menyn markerar den aktiva sidan och länkarna har större tryckytor.
 - Okända adresser visar en egen felsida med korrekt fliktitel; okända projektsluggar visar en separat projektfelvy.

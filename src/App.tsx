@@ -35,11 +35,49 @@ function App() {
   );
 
   const featuredProjects = projects.filter((project) => project.featured);
-  const heroProject = featuredProjects.find(
-    (project) => project.slug === 'lost-in-anxiety',
+
+  const [featuredIndex, setFeaturedIndex] = useState(() => {
+    const index = featuredProjects.findIndex(
+      (project) => project.slug === 'lost-in-anxiety',
+    );
+    return index >= 0 ? index : 0;
+  });
+
+  const [isPlaying, setIsPlaying] = useState(
+    () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   );
 
+  const heroProject = featuredProjects[featuredIndex];
+
+  function showPreviousFeatured() {
+    setIsPlaying(false);
+    setFeaturedIndex(
+      (index) =>
+        (index - 1 + featuredProjects.length) % featuredProjects.length,
+    );
+  }
+
+  function showNextFeatured() {
+    setIsPlaying(false);
+    setFeaturedIndex((index) => (index + 1) % featuredProjects.length);
+  }
+
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (!isPlaying || pathname !== '/' || featuredProjects.length < 2) return;
+
+    const timer = window.setInterval(() => {
+      if (document.visibilityState !== 'visible') {
+        return;
+      }
+
+      setFeaturedIndex((index) => (index + 1) % featuredProjects.length);
+    }, 4000);
+
+    return () => window.clearInterval(timer);
+  }, [isPlaying, pathname, featuredProjects.length]);
+
   const previousPath = useRef(pathname);
 
   useEffect(() => {
@@ -99,6 +137,7 @@ function App() {
                   {heroProject && (
                     <div className='hero-feature'>
                       <img
+                        key={heroProject.slug}
                         src={cardImageUrl(heroProject.image, 900)}
                         srcSet={`${cardImageUrl(heroProject.image, 360)} 360w, ${cardImageUrl(heroProject.image, 600)} 600w, ${cardImageUrl(heroProject.image, 900)} 900w`}
                         sizes='(max-width: 600px) calc(100vw - 40px), 380px'
@@ -107,9 +146,43 @@ function App() {
                       <div className='hero-feature-copy'>
                         <p>Featured project</p>
                         <h2>{heroProject.title}</h2>
-                        <Link to={`/project/${heroProject.slug}`}>
+                        <Link
+                          to={`/project/${heroProject.slug}`}
+                          onMouseEnter={() => setIsPlaying(false)}
+                          onFocus={() => setIsPlaying(false)}
+                        >
                           Explore {heroProject.title}
                         </Link>
+                        <div
+                          className='hero-feature-controls'
+                          role='group'
+                          aria-label='Featured projects'
+                        >
+                          <button
+                            type='button'
+                            onClick={showPreviousFeatured}
+                            aria-label='Previous featured project'
+                          >
+                            ←
+                          </button>
+                          <span>
+                            {featuredIndex + 1} / {featuredProjects.length}
+                          </span>
+                          <button
+                            type='button'
+                            onClick={showNextFeatured}
+                            aria-label='Next featured project'
+                          >
+                            →
+                          </button>
+                          <button
+                            type='button'
+                            className='hero-feature-playback'
+                            onClick={() => setIsPlaying((playing) => !playing)}
+                          >
+                            {isPlaying ? 'Pause' : 'Play'}
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )}
