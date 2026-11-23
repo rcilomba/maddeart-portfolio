@@ -40,7 +40,13 @@ function ProjectPage() {
 
   return (
     <article className='project-page'>
-      <Link to='/projects'>Back to all projects</Link>
+      <div className='project-page-topline'>
+        <Link to='/projects'>← All projects</Link>
+        <span>
+          Project {String(currentIndex + 1).padStart(2, '0')} /
+          {String(projects.length).padStart(2, '0')}
+        </span>
+      </div>
       <h1>{project.title}</h1>
       <div className='project-page-meta'>
         {project.subtitle && <p>{project.subtitle}</p>}
@@ -65,10 +71,12 @@ function ProjectPage() {
       </div>
       <nav aria-label='Project navigation'>
         <Link to={`/project/${previousProject.slug}`}>
-          Previous project: {previousProject.title}
+          <span>← Previous project</span>
+          <strong>{previousProject.title}</strong>
         </Link>
         <Link to={`/project/${nextProject.slug}`}>
-          Next project: {nextProject.title}
+          <span>Next project →</span>
+          <strong>{nextProject.title}</strong>
         </Link>
       </nav>
     </article>

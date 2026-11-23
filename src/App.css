@@ -574,6 +574,19 @@ a:focus-visible {
   padding: 64px var(--page-padding);
 }
 
+.project-page-topline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--page-border);
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .project-page h1 {
   margin: 24px 0;
   font-size: clamp(3rem, 8vw, 7rem);
@@ -617,9 +630,46 @@ a:focus-visible {
   border-top: 1px solid var(--page-border);
 }
 
+.project-page nav a {
+  display: grid;
+  gap: 8px;
+  max-width: 45%;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.project-page nav a:last-child {
+  margin-left: auto;
+  text-align: right;
+}
+
+.project-page nav a span {
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-page nav a strong {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.project-page nav a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 @media (max-width: 600px) {
   .archive-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-page nav a {
+    width: 100%;
+    max-width: none;
   }
 }
 
@@ -628,6 +678,12 @@ a:focus-visible {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--page-border);
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .project-page-meta p {
