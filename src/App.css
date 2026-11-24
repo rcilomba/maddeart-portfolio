@@ -38,6 +38,12 @@
   text-underline-offset: 4px;
 }
 
+.site-header .site-name {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .theme-toggle {
   justify-self: end;
   padding: 8px 0;
@@ -779,6 +785,43 @@ a:focus-visible {
   padding: 64px var(--page-padding);
 }
 
+.about-page-credits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--page-border);
+}
+
+.about-page-credits h2 {
+  margin: 0 0 24px;
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-page-credits ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-page-credits li {
+  margin-bottom: 10px;
+  break-inside: avoid;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .about-page-credits {
+    grid-template-columns: 1fr;
+    margin-top: 56px;
+  }
+}
+
 .about-page h1 {
   margin: 0 0 24px;
   font-family: var(--font-editorial);
@@ -790,6 +833,73 @@ a:focus-visible {
 .about-page a {
   color: inherit;
   text-underline-offset: 4px;
+}
+
+.about-page-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: clamp(32px, 6vw, 80px);
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--page-border);
+}
+
+
+.about-page-lead {
+  margin: 0 0 24px;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  line-height: 1.35;
+}
+
+.about-page-bio {
+  margin: 0 0 32px;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.about-page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.about-page-text a,
+.about-page-work figcaption {
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-page-work {
+  margin: 0;
+}
+
+.about-page-work a {
+  display: block;
+  text-decoration: none;
+}
+
+.about-page-work img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.about-page-work figcaption {
+  margin-top: 12px;
+}
+
+.about-page-work a:hover figcaption {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .about-page-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 

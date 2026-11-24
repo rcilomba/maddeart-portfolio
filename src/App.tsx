@@ -133,7 +133,7 @@ function App() {
                   />
                   <p className='intro-location'>New York</p>
                   <h1>Madeleine Dalla</h1>
-                  <p>A photographer based in New York</p>
+                  <p>A photographer based in New York City and Los Angeles</p>
                   {heroProject && (
                     <div className='hero-feature'>
                       <img
@@ -286,7 +286,7 @@ function App() {
       <ImageDialog dialogRef={imageDialogRef} project={selectedProject} />
       <footer className='site-footer'>
         <p className='site-name'>Madeleine Dalla</p>
-        <p>Photographer &amp; artist · New York</p>
+        <p>Photographer &amp; artist · New York City &amp; Los Angeles</p>
         <nav aria-label='Footer navigation'>
           <Link to='/projects'>Projects</Link>
           <Link to='/about'>About</Link>

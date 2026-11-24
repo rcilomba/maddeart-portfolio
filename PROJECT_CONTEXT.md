@@ -1,6 +1,6 @@
 # MaddeArt – projektkontext
 
-Senast granskad: 2026-11-23
+Senast granskad: 2026-11-24
 
 ## Syfte
 
@@ -37,7 +37,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - Okända adresser visar en egen felsida med korrekt fliktitel; okända projektsluggar visar en separat projektfelvy.
 - En startsida på `/` med introduktion, fem utvalda projekt, Limited Editions och arkivförhandsvisning.
 - En separat `/projects`-sida med alla projekt och en egen huvudrubrik. Menylänken Projects och länken View all projects leder dit. Archive och Limited Editions leder till startsidans sektioner.
-- En enkel `/about`-sida med egen menylänk, sidtitel, kort presentation och länk till projektöversikten. Längre biografitext och eventuella kontaktuppgifter behöver godkännas av Madeleine innan publicering.
+- `/about` har biografisk introduktion, kontaktlänkar, en bild märkt som utvalt arbete samt listor över kunder och publikationer. Text och listor bygger på uppgifter som redan finns på Madeleines nuvarande webbplats; hon ska bekräfta att de fortfarande är aktuella före slutlig publicering. Layouten har två kolumner på breda skärmar och staplas vid 700 px. Ändringarna finns ännu bara lokalt och är inte committade eller publicerade.
 - Varje projekttitel leder till en egen sida på `/project/:slug`, med omslagsbild, eventuella extra bilder och länkar till föregående/nästa projekt. Okänd slug visar ett enkelt felmeddelande. Projektbildernas knappar öppnar fortfarande bilddialogen. Projektsidan för Baldrsdatter har testats lokalt i webbläsaren.
 - Projektdata för 14 projekt finns i `src/data/projects.ts`. Fältet `featured` markerar de fem projekt som visas i den utvalda sektionen.
 - `ProjectCard` och `AllProjects` återanvänder samma projektdata.
@@ -57,7 +57,7 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 - `src/components/ProjectCard.tsx`: projektkort.
 - `src/components/AllProjects.tsx`: översikt över alla projekt.
 - `src/components/ProjectPage.tsx`: enskilda projekt, bildgalleri och föregående/nästa-navigation.
-- `src/components/AboutPage.tsx`: enkel presentationssida.
+- `src/components/AboutPage.tsx`: biografi, kontaktlänkar, utvalt arbete samt kund- och publikationslistor.
 - `src/components/ImageDialog.tsx`: bildvisare och gallerinavigation.
 - `src/utils/cardImageUrl.ts` och `src/utils/galleryImageUrl.ts`: bildadresser i storlekar anpassade för kort respektive gallerier.
 - `src/components/EditionCard.tsx`: konsttryck.
@@ -81,9 +81,11 @@ Kontrollera alltid `git status` och de senaste commitsen i en ny konversation; d
 
 1. Fyll på projektens bildlistor i rätt ordning med granskade alt-texter och slutför innehåll och visuell utformning på projektsidorna.
 2. Granska mobilnavigation, responsiva bildval, kontrast, fokus och andra tillgänglighetsdetaljer i webbläsare.
+   About-sidans text och listor har granskats i lokal förhandsvisning; extern Prismic-bild laddades inte i den isolerade skärmbildskörningen och bör kontrolleras manuellt.
 3. När Madeleine ger åtkomst: undersök Prismic och bekräfta vilket innehåll hon ska kunna redigera. Koppla sedan frontend till valt CMS.
 4. Bekräfta priser, upplagor, storlekar, tillgänglighet och kontaktflöde med Madeleine innan förfrågningar aktiveras.
 5. Slutför designen mot zip-referensen, granska innehållet och testa publicerad version.
+   Bekräfta About-sidans biografiska uppgifter, kund- och publikationsnamn samt kontaktlänkar med Madeleine i slutrundan.
 6. Bygg och dokumentera den fristående blockchain-prototypen för LIA.
 
 ## Så arbetar vi tillsammans
