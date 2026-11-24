@@ -614,10 +614,21 @@ a:focus-visible {
   height: auto;
 }
 
-.project-page-gallery img:first-child {
+.project-page-gallery figure {
+  margin: 0;
+}
+
+.project-page-gallery figure:first-child {
   grid-column: 1 / -1;
-  max-width: 900px;
+  width: min(100%, 900px);
   justify-self: center;
+}
+
+.project-page-gallery figcaption {
+  margin-top: 8px;
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
 }
 
 .project-page nav {

@@ -54,19 +54,26 @@ function ProjectPage() {
       </div>
       <div className='project-page-gallery'>
         {galleryImages.map((image, index) => (
-          <img
-            key={image.src}
-            src={galleryImageUrl(image.src)}
-            alt={image.alt}
-            loading={index === 0 ? 'eager' : 'lazy'}
-            fetchPriority={index === 0 ? 'high' : undefined}
-            srcSet={`${galleryImageUrl(image.src, 600)} 600w, ${galleryImageUrl(image.src, 1000)} 1000w, ${galleryImageUrl(image.src, 1600)} 1600w`}
-            sizes={
-              index === 0
-                ? '(max-width: 960px) 100vw, 900px'
-                : '(max-width: 800px) 100vw, 50vw'
-            }
-          />
+          <figure className='project-page-image' key={image.src}>
+            <img
+              src={galleryImageUrl(image.src)}
+              alt={image.alt}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchPriority={index === 0 ? 'high' : undefined}
+              srcSet={`${galleryImageUrl(image.src, 600)} 600w, ${galleryImageUrl(image.src, 1000)} 1000w, ${galleryImageUrl(image.src, 1600)} 1600w`}
+              sizes={
+                index === 0
+                  ? '(max-width: 960px) 100vw, 900px'
+                  : '(max-width: 800px) 100vw, 50vw'
+              }
+            />
+            {galleryImages.length > 1 && (
+              <figcaption>
+                {String(index + 1).padStart(2, '0')} /{' '}
+                {String(galleryImages.length).padStart(2, '0')}
+              </figcaption>
+            )}
+          </figure>
         ))}
       </div>
       <nav aria-label='Project navigation'>
