@@ -162,6 +162,7 @@ function App() {
                             type='button'
                             onClick={showPreviousFeatured}
                             aria-label='Previous featured project'
+                            onFocus={() => setIsPlaying(false)}
                           >
                             ←
                           </button>
@@ -172,6 +173,7 @@ function App() {
                             type='button'
                             onClick={showNextFeatured}
                             aria-label='Next featured project'
+                            onFocus={() => setIsPlaying(false)}
                           >
                             →
                           </button>
